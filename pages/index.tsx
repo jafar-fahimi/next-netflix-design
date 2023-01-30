@@ -4,7 +4,7 @@ import React from 'react'
 import Header from '../components/Header'
 import Banner from '../components/Banner'
 import requests from '../utils/requests'
-import { Movie } from '../typind'
+import { Movie } from '../typing'
 
 type Props = {
   netflixOriginals: Movie[]
@@ -38,7 +38,7 @@ const Home = ({
       </Head>
       <Header />
       <main>
-        <Banner />
+        <Banner netflixOriginals={netflixOriginals} />
         <section>
           {/* row */}
           {/* row */}
