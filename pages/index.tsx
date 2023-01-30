@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
 import Header from '../components/Header'
+import Banner from '../components/Banner'
 
 // function Home() : NextPage = {
 const Home: NextPage = () => {
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <main>
-        {/* <Banner /> */}
+        <Banner />
         <section>
           {/* row */}
           {/* row */}
