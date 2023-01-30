@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
 import React from 'react'
+import Header from '../components/Header'
 
 // function Home() : NextPage = {
 const Home: NextPage = () => {
@@ -11,7 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       bulild
-      {/* Header */}
+      <Header />
       <main>
         {/* <Banner /> */}
         <section>
