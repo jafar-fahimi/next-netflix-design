@@ -1,22 +1,22 @@
-import { InformationCircleIcon } from '@heroicons/react/outline'
-import { useEffect, useState } from 'react'
-import { baseUrl } from '../constants/movie'
-import { Movie } from '../typings'
-import { FaPlay } from 'react-icons/fa'
-import Image from 'next/image'
+import { InformationCircleIcon } from "@heroicons/react/outline";
+import { useEffect, useState } from "react";
+import { baseUrl } from "../constants/movie";
+import { Movie } from "../typings";
+import { FaPlay } from "react-icons/fa";
+import Image from "next/image";
 
 interface Props {
-  netflixOriginals: Movie[]
+  netflixOriginals: Movie[];
 }
 
 function Banner({ netflixOriginals }: Props) {
-  const [movie, setMovie] = useState<Movie | null>(null)
+  const [movie, setMovie] = useState<Movie | null>(null);
 
   useEffect(() => {
     setMovie(
       netflixOriginals[Math.floor(Math.random() * netflixOriginals.length)]
-    )
-  }, [netflixOriginals])
+    );
+  }, [netflixOriginals]);
 
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
@@ -28,7 +28,7 @@ function Banner({ netflixOriginals }: Props) {
         />
       </div>
 
-      <h1 className="text-2xl font-bold md:text-4xl lg:text-6xl xl:text-7xl pt-10">
+      <h1 className="pt-10 text-2xl font-bold md:text-4xl lg:text-6xl xl:text-7xl">
         {movie?.title || movie?.name || movie?.original_name}
       </h1>
       <p className="max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">
@@ -45,7 +45,7 @@ function Banner({ netflixOriginals }: Props) {
         </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default Banner
+export default Banner;

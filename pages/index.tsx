@@ -1,22 +1,22 @@
 // import { NextPage } from 'next'
-import Head from 'next/head'
-import React from 'react'
-import Header from '../components/Header'
-import Row from '../components/Row'
-import Banner from '../components/Banner'
-import requests from '../utils/requests'
-import { Movie } from '../typings'
+import Head from "next/head";
+import React from "react";
+import Header from "../components/Header";
+import Row from "../components/Row";
+import Banner from "../components/Banner";
+import requests from "../utils/requests";
+import { Movie } from "../typings";
 
 type Props = {
-  netflixOriginals: Movie[]
-  actionMovies: Movie[]
-  comedyMovies: Movie[]
-  documentaries: Movie[]
-  horrorMovies: Movie[]
-  romanceMovies: Movie[]
-  topRated: Movie[]
-  trendingNow: Movie[]
-}
+  netflixOriginals: Movie[];
+  actionMovies: Movie[];
+  comedyMovies: Movie[];
+  documentaries: Movie[];
+  horrorMovies: Movie[];
+  romanceMovies: Movie[];
+  topRated: Movie[];
+  trendingNow: Movie[];
+};
 
 // const Home:NextPage = ({ // made error!
 const Home = ({
@@ -52,9 +52,9 @@ const Home = ({
       </main>
       {/* Modal */}
     </div>
-  )
-}
-export default Home
+  );
+};
+export default Home;
 
 export const getServerSideProps = async () => {
   const [
@@ -75,7 +75,7 @@ export const getServerSideProps = async () => {
     fetch(requests.fetchHorrorMovies).then((res) => res.json()),
     fetch(requests.fetchRomanceMovies).then((res) => res.json()),
     fetch(requests.fetchDocumentaries).then((res) => res.json()),
-  ])
+  ]);
 
   return {
     props: {
@@ -88,5 +88,5 @@ export const getServerSideProps = async () => {
       romanceMovies: romanceMovies.results,
       documentaries: documentaries.results,
     },
-  }
-}
+  };
+};

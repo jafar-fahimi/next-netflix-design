@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import { Movie } from '../typings'
+import Image from "next/image";
+import { Movie } from "../typings";
 
 interface Props {
   // movie: Movie | Document // by firebase
-  movie: Movie
+  movie: Movie;
 }
 
 function Thumbnail({ movie }: Props) {
@@ -19,7 +19,7 @@ function Thumbnail({ movie }: Props) {
         layout="fill"
       />
     </div>
-  )
+  );
 }
 
-export default Thumbnail
+export default Thumbnail;
