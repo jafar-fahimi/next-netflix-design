@@ -2,9 +2,10 @@
 import Head from 'next/head'
 import React from 'react'
 import Header from '../components/Header'
+import Row from '../components/Row'
 import Banner from '../components/Banner'
 import requests from '../utils/requests'
-import { Movie } from '../typing'
+import { Movie } from '../typings'
 
 type Props = {
   netflixOriginals: Movie[]
@@ -37,9 +38,10 @@ const Home = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
+      <main className="relative pl-4 pb-24 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
         <section>
+          <Row />
           {/* row */}
           {/* row */}
           {/* row */}
