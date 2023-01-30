@@ -6,12 +6,11 @@ import Header from '../components/Header'
 // function Home() : NextPage = {
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div>
       <Head>
         <title>Home - Netflix Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      bulild
       <Header />
       <main>
         {/* <Banner /> */}
