@@ -41,6 +41,7 @@ const Home = ({
       <main className="relative pl-4 sm:pb-24 md:pb-40 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
         <section>
+          <Row title="Netflix Original" movies={netflixOriginals} />
           <Row title="Trending Now" movies={trendingNow} />
           <Row title="Top Rated" movies={topRated} />
           <Row title="Action Thrillers" movies={actionMovies} />

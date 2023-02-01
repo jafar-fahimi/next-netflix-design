@@ -47,15 +47,12 @@ export default function Header() {
       </div>
       <div className="flex items-center space-x-4 text-sm font-light">
         <SearchIcon className="sm hidden h-6 w-6 sm:inline" />
-        <p className="hidden lg:inline">Kids</p>
+        <a href="#" className="hidden lg:inline">
+          Kids
+        </a>
         <BellIcon className="h-6 w-6" />
         <Link href="/account">
-          <PresentationChartBarIcon className="h-6 w-6" />
-          {/* <img
-            src="https://rb.gy/g1pwyx"
-            alt=""
-            className="cursor-pointer rounded"
-          /> */}
+          <PresentationChartBarIcon className=" h-6 w-6 cursor-pointer" />
         </Link>
       </div>
     </header>
