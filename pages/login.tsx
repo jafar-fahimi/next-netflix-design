@@ -21,6 +21,32 @@ export default function login() {
         width={150}
         height={150}
       />
+      <form className="relative mx-4 mt-24 space-y-8 rounded bg-black/75 py-10 px-6 sm:px-14 md:mt-0 md:max-w-md">
+        <h1 className="text-4xl font-semibold">Sign In</h1>
+        <div className="space-y-4">
+          <label className="inline-block w-full">
+            <input type="email" placeholder="Email" className={`input`} />
+          </label>
+          <label className="inline-block w-full">
+            <input type="password" placeholder="Password" className="input" />
+          </label>
+        </div>
+        <button
+          className="w-full rounded bg-[#E50914] py-3 font-semibold"
+          type="submit"
+        >
+          Sign In
+        </button>
+        <div className="text-[gray]">
+          New to Netflix?{" "}
+          <button
+            className="cursor-pointer text-white hover:underline"
+            type="submit"
+          >
+            Sign up now
+          </button>
+        </div>
+      </form>
     </section>
   );
 }
