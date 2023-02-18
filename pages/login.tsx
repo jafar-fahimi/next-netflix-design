@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
@@ -15,6 +15,10 @@ export default function Login() {
     watch,
     formState: { errors },
   } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    console.log(data);
+  };
 
   return (
     <section className="relative flex h-screen w-screen flex-col bg-black/60 md:items-center md:justify-center md:bg-transparent">
@@ -34,7 +38,10 @@ export default function Login() {
         width={150}
         height={150}
       />
-      <form className="relative mx-4 mt-24 space-y-8 rounded bg-black/75 py-10 px-6 sm:px-14 md:mt-0 md:max-w-md">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="relative mx-4 mt-24 space-y-8 rounded bg-black/75 py-10 px-6 sm:px-14 md:mt-0 md:max-w-md"
+      >
         <h1 className="text-4xl font-semibold">Sign In</h1>
         <div className="space-y-4">
           <label className="inline-block w-full">
