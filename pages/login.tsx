@@ -1,6 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  email: string;
+  password: string;
+};
+const {
+  register,
+  handleSubmit,
+  watch,
+  formState: { errors },
+} = useForm<Inputs>();
 
 export default function login() {
   return (
