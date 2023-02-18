@@ -7,14 +7,15 @@ type Inputs = {
   email: string;
   password: string;
 };
-const {
-  register,
-  handleSubmit,
-  watch,
-  formState: { errors },
-} = useForm<Inputs>();
 
-export default function login() {
+export default function Login() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+
   return (
     <section className="relative flex h-screen w-screen flex-col bg-black/60 md:items-center md:justify-center md:bg-transparent">
       <Head>
@@ -37,10 +38,34 @@ export default function login() {
         <h1 className="text-4xl font-semibold">Sign In</h1>
         <div className="space-y-4">
           <label className="inline-block w-full">
-            <input type="email" placeholder="Email" className={`input`} />
+            <input
+              type="email"
+              placeholder="Email"
+              className={`input ${
+                errors.email && "border-b-2 border-orange-500"
+              }`}
+              {...register("email", { required: true })}
+            />
+            {errors.email && (
+              <p className="p-1 text-[13px] font-light  text-orange-500">
+                Please enter a valid email.
+              </p>
+            )}
           </label>
           <label className="inline-block w-full">
-            <input type="password" placeholder="Password" className="input" />
+            <input
+              type="password"
+              placeholder="Password"
+              className={`input ${
+                errors.password && "border-b-2 border-orange-500"
+              }`}
+              {...register("password", { required: true })}
+            />
+            {errors.password && (
+              <p className="p-1 text-[13px] font-light  text-orange-500">
+                Your password must contain between 4 and 60 characters.
+              </p>
+            )}
           </label>
         </div>
         <button
@@ -50,7 +75,7 @@ export default function login() {
           Sign In
         </button>
         <div className="text-[gray]">
-          New to Netflix?{" "}
+          New to Netflix?
           <button
             className="cursor-pointer text-white hover:underline"
             type="submit"
