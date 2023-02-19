@@ -1,6 +1,7 @@
+import { AuthError } from "firebase/auth";
 import Head from "next/head";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
 
@@ -11,7 +12,9 @@ type Inputs = {
 
 export default function Login() {
   const [login, setLogin] = useState(false);
-  const { signIn, signUp } = useAuth();
+  const { signIn, signUp, error } = useAuth();
+  const [err, setErr] = useState<null | string | AuthError>(error);
+
   const {
     register,
     handleSubmit,
@@ -26,6 +29,8 @@ export default function Login() {
       await signUp(email, password);
     }
   };
+
+  useEffect(() => setErr(error), [error]);
 
   return (
     <section className="relative flex h-screen w-screen flex-col bg-black/60 md:items-center md:justify-center md:bg-transparent">
@@ -51,10 +56,12 @@ export default function Login() {
       >
         <h1 className="text-4xl font-semibold">Sign In</h1>
         <div className="space-y-4">
+          {err && <span className="text-2xl text-red-500">{err}</span>}
           <label className="inline-block w-full">
             <input
               type="email"
               placeholder="Email"
+              onKeyDown={() => setErr(null)}
               className={`input ${
                 errors.email && "border-b-2 border-orange-500"
               }`}
@@ -70,6 +77,7 @@ export default function Login() {
             <input
               type="password"
               placeholder="Password"
+              onKeyDown={() => setErr(null)}
               className={`input ${
                 errors.password && "border-b-2 border-orange-500"
               }`}
