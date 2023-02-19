@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 
 import { useRouter } from "next/router";
-import { createContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { auth } from "../firebase";
 
 type AuthProviderProps = {
@@ -108,3 +108,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     </AuthContext.Provider>
   );
 };
+
+
+// instead of the context, to use the hook directly and not the context component.
+export default function useAuth() {
+  return useContext(AuthContext);
+}
