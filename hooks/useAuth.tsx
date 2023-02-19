@@ -14,6 +14,15 @@ type AuthProviderProps = {
   children: React.ReactNode;
 };
 
+type AuthType = {
+  user: User | null;
+  signUp: (email: string, password: string) => Promise<void>;
+  signIn: (email: string, password: string) => Promise<void>;
+  logout: () => Promise<void>;
+  error: string | null;
+  loading: boolean;
+};
+
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
