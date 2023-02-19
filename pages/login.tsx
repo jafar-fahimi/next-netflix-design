@@ -9,6 +9,7 @@ type Inputs = {
 };
 
 export default function Login() {
+  const [login, setLogin] = useState(false);
   const {
     register,
     handleSubmit,
@@ -18,6 +19,9 @@ export default function Login() {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(data);
+    if (login) {
+    } else {
+    }
   };
 
   return (
@@ -82,6 +86,7 @@ export default function Login() {
         <button
           className="w-full rounded bg-[#E50914] py-3 font-semibold"
           type="submit"
+          onClick={() => setLogin(true)}
         >
           Sign In
         </button>
@@ -90,6 +95,7 @@ export default function Login() {
           <button
             className="cursor-pointer text-white hover:underline"
             type="submit"
+            onClick={() => setLogin(false)}
           >
             Sign up now
           </button>
