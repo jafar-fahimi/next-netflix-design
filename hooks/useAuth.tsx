@@ -10,7 +10,11 @@ import { Router, useRouter } from "next/router";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { auth } from "../firebase";
 
-export default function UseAuth() {
+type AuthProviderProps = {
+  children: React.ReactNode;
+};
+
+export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
@@ -44,5 +48,5 @@ export default function UseAuth() {
       .catch((err) => alert(err.message))
       .finally(() => setLoading(false));
   };
-  return;
-}
+  return <h1>AuthProvider</h1>;
+};
