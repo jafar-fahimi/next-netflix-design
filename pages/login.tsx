@@ -15,7 +15,6 @@ export default function Login() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -95,7 +94,7 @@ export default function Login() {
           Sign In
         </button>
         <div className="text-[gray]">
-          New to Netflix?
+          New to Netflix?&nbsp;
           <button
             className="cursor-pointer text-white hover:underline"
             type="submit"

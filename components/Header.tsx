@@ -6,9 +6,11 @@ import {
 // import BasicMenu from './BasicMenu'
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import useAuth from "../hooks/useAuth";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { logout } = useAuth();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -51,9 +53,9 @@ export default function Header() {
           Kids
         </a>
         <BellIcon className="h-6 w-6" />
-        <Link href="/account">
+        <button onClick={logout}>
           <PresentationChartBarIcon className=" h-6 w-6 cursor-pointer" />
-        </Link>
+        </button>
       </div>
     </header>
   );
