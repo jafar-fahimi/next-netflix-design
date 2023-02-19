@@ -6,8 +6,8 @@ import {
   User,
 } from "firebase/auth";
 
-import { Router, useRouter } from "next/router";
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/router";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { auth } from "../firebase";
 
 type AuthProviderProps = {
@@ -23,6 +23,7 @@ type AuthType = {
   loading: boolean;
 };
 
+// when creating Context we must provide inital value;
 const AuthContext = createContext<AuthType>({
   user: null,
   signUp: async () => {},
@@ -66,5 +67,5 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       .catch((err) => alert(err.message))
       .finally(() => setLoading(false));
   };
-  return <h1>AuthProvider</h1>;
+  return <AuthContext.Provider>{children}</AuthContext.Provider>;
 };
