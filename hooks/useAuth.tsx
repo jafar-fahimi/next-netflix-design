@@ -23,6 +23,15 @@ type AuthType = {
   loading: boolean;
 };
 
+const AuthContext = createContext<AuthType>({
+  user: null,
+  signUp: async () => {},
+  signIn: async () => {},
+  logout: async () => {},
+  error: null,
+  loading: false,
+});
+
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
