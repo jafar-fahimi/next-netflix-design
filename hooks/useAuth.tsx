@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   User,
+  AuthError,
 } from "firebase/auth";
 
 import { useRouter } from "next/router";
@@ -19,7 +20,7 @@ type AuthType = {
   signUp: (email: string, password: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
-  error: string | null;
+  error: string | null | AuthError;
   loading: boolean;
 };
 
@@ -36,36 +37,47 @@ const AuthContext = createContext<AuthType>({
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User | null>(null);
+  const [error, setError] = useState<null | AuthError>(null);
   const router = useRouter();
 
-  const signUp = (email: string, password: string) => {
+  const signUp = async (email: string, password: string) => {
     setLoading(true);
-    createUserWithEmailAndPassword(auth, email, password)
+    await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setUser(userCredential.user);
         router.push("/");
       })
-      .catch((err) => alert(err.message))
+      .catch((err) => {
+        alert(err.message);
+        setError(err.message);
+      })
       .finally(() => setLoading(false));
   };
 
-  const signIn = (email: string, password: string) => {
+  const signIn = async (email: string, password: string) => {
     setLoading(true);
-    signInWithEmailAndPassword(auth, email, password)
+    await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setUser(userCredential.user);
         router.push("/");
       })
-      .catch((err) => alert(err.message))
+      .catch((err) => {
+        alert(err.message);
+        setError(err.message);
+      })
       .finally(() => setLoading(false));
   };
 
-  const logout = () => {
+  const logout = async () => {
     setLoading(true);
-    signOut(auth)
+    await signOut(auth)
       .then(() => setUser(null))
-      .catch((err) => alert(err.message))
+      .catch((err) => {
+        alert(err.message);
+        setError(err.message);
+      })
       .finally(() => setLoading(false));
   };
-  return <AuthContext.Provider>{children}</AuthContext.Provider>;
+  const values = { user, signUp, error, loading, logout, signIn, signOut };
+  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
