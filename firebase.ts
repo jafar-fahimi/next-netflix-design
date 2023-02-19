@@ -20,9 +20,12 @@ const firebaseConfig = {
 
 // Initialize Firebase // always know why! orelse your memorizing!
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-console.log("getApps().length: ", getApps().length);
+// getApps()	A (read-only) array of all initialized apps.
+// getApp() Retrieves a FirebaseApp instance.When called with no arguments, the default app is returned. When an app name is provided, the app corresponding to that name is returned.An exception is thrown if the app being retrieved has not yet been initialized.
 const db = getFirestore();
-const auth = getAuth();
+
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(); // getAuth is to check whether we're authenticated or not
 
 export default app;
 export { auth, db };
