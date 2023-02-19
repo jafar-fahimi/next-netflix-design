@@ -66,7 +66,11 @@ export default function Login() {
               className={`input ${
                 errors.password && "border-b-2 border-orange-500"
               }`}
-              {...register("password", { required: true })}
+              {...register("password", {
+                required: true,
+                minLength: 4,
+                maxLength: 60,
+              })}
             />
             {errors.password && (
               <p className="p-1 text-[13px] font-light  text-orange-500">
