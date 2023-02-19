@@ -10,7 +10,8 @@ import useAuth from "../hooks/useAuth";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { logout } = useAuth();
+  const { logout, loading } = useAuth();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -25,6 +26,7 @@ export default function Header() {
     };
   }, []);
 
+  if (loading) return <h2>Loading...</h2>;
   return (
     <header className={`${isScrolled && "bg-slate-900/75"}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
