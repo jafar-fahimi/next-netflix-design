@@ -78,6 +78,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       })
       .finally(() => setLoading(false));
   };
-  const values = { user, signUp, error, loading, logout, signIn, signOut };
-  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
+  const memoedValues = useMemo(
+    () => ({ user, signUp, signIn, error, loading, logout }),
+    [user, loading, error]
+  );
+  return <AuthContext.Provider value={memoedValues}>{children}</AuthContext.Provider>;
 };
