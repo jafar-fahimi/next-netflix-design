@@ -17,10 +17,12 @@ export default function Login() {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
+    console.log(email);
     if (login) {
+      // await signIn(email, password)
     } else {
+      // await signUp(email, password)
     }
   };
 
