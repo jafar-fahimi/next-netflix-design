@@ -109,7 +109,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   );
 };
 
-
 // instead of the context, to use the hook directly and not the context component.
 export default function useAuth() {
   return useContext(AuthContext);
