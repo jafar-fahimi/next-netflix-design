@@ -8,6 +8,7 @@ import requests from "../utils/requests";
 import { Movie } from "../typings";
 import { useRecoilValue } from "recoil";
 import { modalState } from "../atoms/modalAtoms";
+import Modal from "../components/Modal";
 
 type Props = {
   netflixOriginals: Movie[];
@@ -56,7 +57,7 @@ const Home = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
-      {/* Modal */}
+    {showModal && <Modal />}
     </div>
   );
 };
