@@ -59,7 +59,7 @@ export default function Modal() {
         <>
           <button
             onClick={handleClose}
-            className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 p-1 border-none bg-[#181818]"
+            className="modalButton absolute right-5 top-5 !z-40 h-9 w-9 border-none bg-[#181818] p-1"
           >
             <XIcon width={45} height={45} />
           </button>
