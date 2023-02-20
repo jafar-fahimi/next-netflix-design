@@ -41,7 +41,11 @@ export default function Modal() {
   return (
     <>
       {/* open modal when showModal is true, when closing modal do handleClose */}
-      <MuiModal open={showModal} onClose={handleClose}>
+      <MuiModal
+        className="fixed !top-7 left-0 right-0 z-50 mx-auto w-full max-w-5xl overflow-hidden overflow-y-scroll rounded-md scrollbar-hide"
+        open={showModal}
+        onClose={handleClose}
+      >
         <>
           <button onClick={handleClose} className="">
             <XIcon width={45} height={45} />
