@@ -34,7 +34,7 @@ const Home = ({
 }: Props) => {
   const showModal = useRecoilValue(modalState);
   // const [showModal, setShowModal] = useState(false);
-  
+
   return (
     <div
       className={`relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh] `}
@@ -57,7 +57,7 @@ const Home = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
-    {showModal && <Modal />}
+      {showModal && <Modal />}
     </div>
   );
 };
