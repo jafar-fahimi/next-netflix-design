@@ -3,8 +3,8 @@ import { atom } from "recoil";
 import { Movie } from "../typings";
 
 export const modalState = atom({
-  key: "modalState",
-  default: false,
+  key: "modalState", // unique key
+  default: false, // default value
 });
 
 export const movieState = atom<Movie | DocumentData | null>({
