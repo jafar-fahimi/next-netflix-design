@@ -62,7 +62,9 @@ export default function Header({ links }: { links: string[] }) {
           <Link href="Plans">Plans</Link>
         </button>
 
-        <BellIcon className="h-7 w-7 hover:text-slate-700" />
+        <Link href="/#watch">
+          <BellIcon className="h-7 w-7 hover:text-slate-700" />
+        </Link>
         <button onClick={logout}>
           <PresentationChartBarIcon className=" h-7 w-7 cursor-pointer hover:text-slate-700" />
         </button>
