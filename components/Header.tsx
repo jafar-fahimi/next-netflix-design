@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import useAuth from "../hooks/useAuth";
 
-export default function Header() {
+export default function Header({ links }: { links: string[] }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const { logout, loading } = useAuth();
 
@@ -40,12 +40,17 @@ export default function Header() {
 
         <ul className="hidden space-x-4 md:flex">
           <li className="headerLink cursor-default font-semibold text-white hover:text-white">
-            Home
+            <Link href="/">Home</Link>
           </li>
-          <li className="headerLink">TV Shows</li>
+          {links.map((link) => (
+            <li className="headerLink">
+              <Link href={`/#${link}`}>{link}</Link>
+            </li>
+          ))}
+          {/* <li className="headerLink">TV Shows</li>
           <li className="headerLink">Movies</li>
           <li className="headerLink">New & Popular</li>
-          <li className="headerLink">My List</li>
+          <li className="headerLink">My List</li> */}
         </ul>
       </div>
       <div className="flex items-center space-x-4 text-sm font-light">

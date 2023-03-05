@@ -34,7 +34,7 @@ const Home = ({
 }: Props) => {
   const showModal = useRecoilValue(modalState);
   // const [showModal, setShowModal] = useState(false);
-  
+
   return (
     <div
       className={`relative h-screen bg-gradient-to-b from-gray-900/10 to-[#010511] lg:h-[140vh] ${
@@ -45,18 +45,18 @@ const Home = ({
         <title>Home - Netflix Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header links={['Netflix', 'Trending', 'Top', 'Action','Comedies','Scary','Romance','Documentaries']} />
       <main className="relative pl-4 sm:pb-24 md:pb-40 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
         <section>
-          <Row title="Netflix Original" movies={netflixOriginals} />
-          <Row title="Trending Now" movies={trendingNow} />
-          <Row title="Top Rated" movies={topRated} />
-          <Row title="Action Thrillers" movies={actionMovies} />
-          <Row title="Comedies" movies={comedyMovies} />
-          <Row title="Scary Movies" movies={horrorMovies} />
-          <Row title="Romance Movies" movies={romanceMovies} />
-          <Row title="Documentaries" movies={documentaries} />
+          <div id="Netflix"><Row title="Netflix Original" movies={netflixOriginals} /></div>
+          <div id="Trending"><Row title="Trending Now" movies={trendingNow} /></div>
+          <div id="Top"><Row title="Top Rated" movies={topRated} /></div>
+          <div id="Action"><Row title="Action Thrillers" movies={actionMovies} /></div>
+          <div id="Comedies"><Row title="Comedies" movies={comedyMovies} /></div>
+          <div id="Scary"><Row title="Scary Movies" movies={horrorMovies} /></div>
+          <div id="Romance"><Row title="Romance Movies" movies={romanceMovies} /></div>
+          <div id="Documentaries"><Row title="Documentaries" movies={documentaries} /></div>
         </section>
       </main>
       {showModal && <Modal />}
