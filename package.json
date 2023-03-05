@@ -15,7 +15,7 @@
     "@mui/icons-material": "^5.5.1",
     "@mui/lab": "^5.0.0-alpha.76",
     "@mui/material": "^5.5.1",
-    "@stripe/firestore-stripe-payments": "^0.0.6",
+    "@stripe/stripe-js": "^1.48.0",
     "@tailwindcss/line-clamp": "^0.3.1",
     "firebase": "^9.6.10",
     "framer-motion": "^6.2.8",
@@ -31,6 +31,7 @@
     "react-player": "^2.10.0",
     "react-transition-group": "^4.4.2",
     "recoil": "^0.7.0",
+    "stripe": "^11.13.0",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
