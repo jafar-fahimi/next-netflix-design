@@ -3,14 +3,15 @@ import {
   SearchIcon,
   BellIcon,
 } from "@heroicons/react/solid";
-// import BasicMenu from './BasicMenu'
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import useAuth from "../hooks/useAuth";
+import { Box, Modal } from "@mui/material";
 
 export default function Header({ links }: { links: string[] }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const { logout, loading } = useAuth();
+  const [showLogOut, setShowLogOut] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,9 +66,41 @@ export default function Header({ links }: { links: string[] }) {
         <Link href="/#watch">
           <BellIcon className="h-7 w-7 hover:text-slate-700" />
         </Link>
-        <button onClick={logout}>
-          <PresentationChartBarIcon className=" h-7 w-7 cursor-pointer hover:text-slate-700" />
+        <button onClick={() => setShowLogOut(true)}>
+          <PresentationChartBarIcon className="h-7 w-7 cursor-pointer hover:text-slate-700" />
         </button>
+        {showLogOut && (
+          <div>
+            <Modal
+              open={showLogOut}
+              onClose={setShowLogOut}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box className="flex h-full flex-col items-center bg-black/20 justify-center">
+                <div className="rounded-lg bg-black/50 py-4 px-12 pb-8">
+                  <h2 className="mb-8 text-center text-2xl">
+                    Are You Sure to logout?
+                  </h2>
+                  <div className="flex gap-x-4 text-lg">
+                    <button
+                      className="rounded-sm bg-blue-600 py-3 px-12 hover:bg-blue-600/80"
+                      onClick={() => setShowLogOut(false)}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="rounded-sm bg-red-600 py-3 px-12 hover:bg-red-600/80"
+                      onClick={logout}
+                    >
+                      Log Out
+                    </button>
+                  </div>
+                </div>
+              </Box>
+            </Modal>
+          </div>
+        )}
       </div>
     </header>
   );
