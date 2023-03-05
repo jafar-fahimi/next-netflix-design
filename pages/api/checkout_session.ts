@@ -26,15 +26,15 @@ export default async function handler(
         cancel_url: `${req.headers.origin}/`,
       };
       session = await stripe.checkout.sessions.create(sessionItem);
-
-      res.setHeader("Content-Type", "application/json");
-      res.setHeader("Cache-Control", "max-age=180000");
-      res.end(JSON.stringify(session));
-      res.status(200).json({ session });
+      // Cannot set headers after they are sent to the client // commented below to avoid the error!
+      //   res.setHeader("Content-Type", "application/json");
+      //   res.setHeader("Cache-Control", "max-age=180000");
+      res.end(JSON.stringify(session) || "");
+      //   res.status(200).json({ session });
       return session;
     } catch (err: any) {
       console.error("error! : " + err.message); // alert don't work in server side
-      res.status(200).json({ message: err });
+      //   res.status(200).json({ message: err });
       //   throw new Error(err);
     }
   }

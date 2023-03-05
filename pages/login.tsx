@@ -22,7 +22,6 @@ export default function Login() {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
-    console.log(email);
     if (login) {
       await signIn(email, password);
     } else {
