@@ -54,6 +54,10 @@ export default function Header() {
         <a href="#" className="hidden lg:inline">
           Kids
         </a>
+        <button>
+          <Link href="Plans">Plans</Link>
+        </button>
+
         <BellIcon className="h-6 w-6" />
         <button onClick={logout}>
           <PresentationChartBarIcon className=" h-6 w-6 cursor-pointer" />
