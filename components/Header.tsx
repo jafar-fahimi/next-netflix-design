@@ -54,10 +54,10 @@ export default function Header({ links }: { links: string[] }) {
         </ul>
       </div>
       <div className="flex items-center space-x-4 text-lg font-light">
-        <SearchIcon className="sm hidden h-7 w-7 sm:inline hover:text-slate-700" />
-        <a href="#" className="hidden lg:inline hover:text-slate-700">
-          Kids
-        </a>
+        <SearchIcon className="sm hidden h-7 w-7 hover:text-slate-700 sm:inline" />
+        <span className="hidden hover:text-slate-700 lg:inline">
+          <Link href="/#kids">Kids</Link>
+        </span>
         <button className="hover:text-slate-700">
           <Link href="Plans">Plans</Link>
         </button>

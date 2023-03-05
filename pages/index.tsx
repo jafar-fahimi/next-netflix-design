@@ -9,6 +9,7 @@ import { Movie } from "../typings";
 import { useRecoilValue } from "recoil";
 import { modalState } from "../atoms/modalAtoms";
 import Modal from "../components/Modal";
+import Kids from "../components/Kids";
 
 type Props = {
   netflixOriginals: Movie[];
@@ -58,6 +59,9 @@ const Home = ({
           <div id="Romance"><Row title="Romance Movies" movies={romanceMovies} /></div>
           <div id="Documentaries"><Row title="Documentaries" movies={documentaries} /></div>
         </section>
+        <div id="kids">
+          <Kids />
+        </div>
       </main>
       {showModal && <Modal />}
     </div>
