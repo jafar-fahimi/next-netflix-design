@@ -1,13 +1,13 @@
 import { CheckIcon } from "@heroicons/react/outline";
-import { Product } from "@stripe/firestore-stripe-payments";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import Table from "../components/Table";
 import useAuth from "../hooks/useAuth";
-// import { loadCheckout } from "../lib/stripe";
 import Loader from "../components/Loader";
 import { products as myProducts } from "../utils/products";
+import getStripe from "../utils/get-stripe";
+import { Product } from "../typings";
 
 interface Props {
   products: Product[];
@@ -19,12 +19,27 @@ function Plans({ products }: Props) {
   );
   const [isBillingLoading, setBillingLoading] = useState(false);
 
-  console.log(myProducts);
-
-  const subscribeToPlan = () => {
+  const subscribeToPlan = async () => {
     if (!user) return;
-    // loadCheckout(selectedPlan?.prices[0].id!);
-    setBillingLoading(true);
+    try {
+      setBillingLoading(true);
+      const stripe = await getStripe();
+      const response = await fetch("/api/checkout_session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(selectedPlan),
+      });
+      const result = await response.json();
+      stripe?.redirectToCheckout({ sessionId: result.id });
+
+      setBillingLoading(false);
+      return response;
+    } catch (err: any) {
+      alert("Error occured while proceeding your payment: " + err.message);
+      setBillingLoading(false);
+    }
   };
 
   return (
@@ -89,6 +104,7 @@ function Plans({ products }: Props) {
           <Table products={myProducts} selectedPlan={selectedPlan} />
 
           <button
+            type="button"
             disabled={!selectedPlan || isBillingLoading}
             className={`mx-auto w-11/12 rounded bg-[#E50914] py-4 text-xl shadow hover:bg-[#f6121d] md:w-[420px] ${
               isBillingLoading && "opacity-60"
