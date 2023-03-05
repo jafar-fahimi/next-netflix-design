@@ -2,7 +2,7 @@ import { Product } from "./../typings";
 
 export const products: Product[] = [
   {
-    id: "basic",
+    id: "price_1Mi7r2Jr3xk8HJSWWZjt0c9t",
     active: true,
     description: "",
     images: [],
@@ -33,7 +33,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "standard",
+    id: "price_1Mi7syJr3xk8HJSWzb6YyUSO",
     active: true,
     description: "",
     images: [],
@@ -64,7 +64,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "premium",
+    id: "price_1Mi7uEJr3xk8HJSWFBAMzct4",
     active: true,
     description: "",
     images: [],
