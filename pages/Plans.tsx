@@ -36,10 +36,11 @@ function Plans({ products }: Props) {
       <header className="border-b border-white/10 bg-[#141414]">
         <Link href="/">
           <img
-            src="https://rb.gy/ulxxee"
-            alt="Netflix"
+            src="/Netflix_2015_logo.svg"
             width={150}
-            height={90}
+            height={120}
+            alt="Netflix"
+            title="Back to Home Page"
             className="cursor-pointer object-contain"
           />
         </Link>

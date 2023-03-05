@@ -32,11 +32,10 @@ export default function Header() {
       <div className="flex items-center space-x-2 md:space-x-10">
         <img
           src="/Netflix_2015_logo.svg"
-          width={100}
-          height={100}
+          width={150}
+          height={120}
           className="cursor-pointer object-contain"
         />
-
         {/* <BasicMenu /> */}
 
         <ul className="hidden space-x-4 md:flex">
