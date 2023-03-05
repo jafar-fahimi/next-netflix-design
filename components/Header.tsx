@@ -28,7 +28,7 @@ export default function Header({ links }: { links: string[] }) {
 
   if (loading) return <h2>Loading...</h2>;
   return (
-    <header className={`${isScrolled && "bg-slate-900/75"}`}>
+    <header className={`${isScrolled && "bg-black/75"}`}>
       <div className="flex items-center space-x-2 md:space-x-10">
         <img
           src="/Netflix_2015_logo.svg"

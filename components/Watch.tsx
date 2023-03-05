@@ -13,14 +13,30 @@ export default function Watch() {
           and TV without paying more.
         </p>
       </div>
-      <div className="flex justify-center">
-        <Image
-          src="/images/device-pile.png"
-          alt="Netflix for kids"
-          className="h-full w-full"
-          height={400}
-          width={600}
-        />
+      <div className="relative flex justify-center">
+        <div className="absolute scale-75">
+          <video
+            data-uia="nmhp-card-animation-asset-video"
+            autoPlay
+            playsInline
+            muted
+            loop
+          >
+            <source
+              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div>
+          <Image
+            src="/images/device-pile.png"
+            alt="Netflix for kids"
+            className="h-full w-full"
+            height={400}
+            width={600}
+          />
+        </div>
       </div>
     </div>
   );
