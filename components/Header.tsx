@@ -1,5 +1,4 @@
 import {
-  PresentationChartBarIcon,
   SearchIcon,
   BellIcon,
 } from "@heroicons/react/solid";
@@ -10,7 +9,7 @@ import { Box, Modal } from "@mui/material";
 
 export default function Header({ links }: { links: string[] }) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { logout, loading } = useAuth();
+  const { logout, loading, user } = useAuth();
   const [showLogOut, setShowLogOut] = useState(false);
 
   useEffect(() => {
@@ -37,10 +36,9 @@ export default function Header({ links }: { links: string[] }) {
           height={120}
           className="cursor-pointer object-contain"
         />
-        {/* <BasicMenu /> */}
 
         <ul className="hidden space-x-4 md:flex">
-          <li className="headerLink cursor-default font-semibold text-white hover:text-white">
+          <li className="headerLink cursor-default font-semibold text-white">
             <Link href="/">Home</Link>
           </li>
           {links.map((link) => (
@@ -55,19 +53,36 @@ export default function Header({ links }: { links: string[] }) {
         </ul>
       </div>
       <div className="flex items-center space-x-4 text-lg font-light">
-        <SearchIcon className="sm hidden h-7 w-7 hover:text-slate-700 sm:inline" />
-        <span className="hidden hover:text-slate-700 lg:inline">
+        <SearchIcon className="sm hidden h-7 w-7 hover:text-slate-400 sm:inline" />
+        <span className="hidden hover:text-slate-400 lg:inline">
           <Link href="/#kids">Kids</Link>
         </span>
-        <button className="hover:text-slate-700">
+        <button className="hover:text-slate-400">
           <Link href="Plans">Plans</Link>
         </button>
 
         <Link href="/#watch">
-          <BellIcon className="h-7 w-7 hover:text-slate-700" />
+          <BellIcon className="h-7 w-7 hover:text-slate-400" />
         </Link>
-        <button onClick={() => setShowLogOut(true)}>
-          <PresentationChartBarIcon className="h-7 w-7 cursor-pointer hover:text-slate-700" />
+        <button
+          className="hover:text-slate-400"
+          onClick={() => setShowLogOut(true)}
+          title={`${user ? "Log Out" : "Log In"}`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="h-7 w-7"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+            />
+          </svg>
         </button>
         {showLogOut && (
           <div>
@@ -77,24 +92,43 @@ export default function Header({ links }: { links: string[] }) {
               aria-labelledby="modal-modal-title"
               aria-describedby="modal-modal-description"
             >
-              <Box className="flex h-full flex-col items-center bg-black/20 justify-center">
-                <div className="rounded-lg bg-black/50 py-4 px-12 pb-8">
-                  <h2 className="mb-8 text-center text-2xl">
-                    Are You Sure to logout?
-                  </h2>
-                  <div className="flex gap-x-4 text-lg">
-                    <button
-                      className="rounded-sm bg-blue-600 py-3 px-12 hover:bg-blue-600/80"
-                      onClick={() => setShowLogOut(false)}
+              <Box className="flex h-full flex-col items-center justify-center bg-black/20">
+                <div className="flex items-center rounded-lg bg-black/50 py-4 px-8 pb-8">
+                  <span className="mr-10 inline rounded-full bg-red-600 p-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.8}
+                      stroke="white"
+                      className="inline h-10 w-10"
                     >
-                      Cancel
-                    </button>
-                    <button
-                      className="rounded-sm bg-red-600 py-3 px-12 hover:bg-red-600/80"
-                      onClick={logout}
-                    >
-                      Log Out
-                    </button>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <h2 className="mb-8 text-center text-2xl">
+                      Are You Sure to logout?
+                    </h2>
+
+                    <div className="flex gap-x-4 text-lg">
+                      <button
+                        className="rounded-sm bg-blue-600 py-3 px-12 hover:bg-blue-600/80"
+                        onClick={() => setShowLogOut(false)}
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className="rounded-sm bg-red-600 py-3 px-12 hover:bg-red-600/80"
+                        onClick={logout}
+                      >
+                        Log Out
+                      </button>
+                    </div>
                   </div>
                 </div>
               </Box>
