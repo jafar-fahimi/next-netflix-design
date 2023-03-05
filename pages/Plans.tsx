@@ -7,17 +7,19 @@ import Table from "../components/Table";
 import useAuth from "../hooks/useAuth";
 // import { loadCheckout } from "../lib/stripe";
 import Loader from "../components/Loader";
+import { products as myProducts } from "../utils/products";
 
 interface Props {
   products: Product[];
 }
-
 function Plans({ products }: Props) {
   const { logout, user } = useAuth();
-  const [selectedPlan, setSelectedPlan] = useState<Product | null>(products[2]);
+  const [selectedPlan, setSelectedPlan] = useState<Product | null>(
+    myProducts[2]
+  );
   const [isBillingLoading, setBillingLoading] = useState(false);
 
-  console.log(products);
+  console.log(myProducts);
 
   const subscribeToPlan = () => {
     if (!user) return;
@@ -70,7 +72,7 @@ function Plans({ products }: Props) {
 
         <div className="mt-4 flex flex-col space-y-4">
           <div className="flex w-full items-center justify-end self-end md:w-3/5">
-            {products.map((product) => (
+            {myProducts.map((product) => (
               <div
                 className={`planBox ${
                   selectedPlan?.id === product.id ? "opacity-100" : "opacity-60"
@@ -83,7 +85,7 @@ function Plans({ products }: Props) {
             ))}
           </div>
 
-          <Table products={products} selectedPlan={selectedPlan} />
+          <Table products={myProducts} selectedPlan={selectedPlan} />
 
           <button
             disabled={!selectedPlan || isBillingLoading}
