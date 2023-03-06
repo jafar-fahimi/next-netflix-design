@@ -48,7 +48,7 @@ const Home = ({
         <link rel="icon" href="/netflix_logo_icon.ico" />
       </Head>
       <Header links={['Netflix', 'Trending', 'Top', 'Action','Comedies','Scary','Romance','Documentaries']} />
-      <main className="relative pl-4 sm:pb-20 md:pb-28 lg:space-y-24 lg:pl-16">
+      <main className="relative pl-4 sm:pb-20 md:pb-28 lg:pt-52 xl:pt-40 lg:space-y-24 lg:pl-16">
         <Banner netflixOriginals={netflixOriginals} />
         <section>
           <div id="Netflix"><Row title="Netflix Original" movies={netflixOriginals} /></div>

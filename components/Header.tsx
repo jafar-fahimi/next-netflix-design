@@ -34,7 +34,7 @@ export default function Header({ links }: { links: string[] }) {
           src="/Netflix_2015_logo.svg"
           width={150}
           height={120}
-          className="cursor-pointer object-contain"
+          className="cursor-pointer object-contain w-20 sm:w-36 md:w-40"
         />
 
         <ul className="hidden space-x-4 md:flex">
@@ -42,7 +42,7 @@ export default function Header({ links }: { links: string[] }) {
             <Link href="/">Home</Link>
           </li>
           {links.map((link) => (
-            <li className="headerLink">
+            <li className="headerLink hidden lg:inline-block">
               <Link href={`/#${link}`}>{link}</Link>
             </li>
           ))}
@@ -52,7 +52,7 @@ export default function Header({ links }: { links: string[] }) {
           <li className="headerLink">My List</li> */}
         </ul>
       </div>
-      <div className="flex items-center space-x-4 text-lg font-light">
+      <div className="flex items-center space-x-1 md:space-x-4 text-lg font-light">
         <SearchIcon className="sm hidden h-7 w-7 hover:text-slate-400 sm:inline" />
         <span className="hidden hover:text-slate-400 lg:inline">
           <Link href="/#kids">Kids</Link>
