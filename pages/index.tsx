@@ -45,7 +45,7 @@ const Home = ({
     >
       <Head>
         <title>Home - Netflix Clone</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/netflix_logo_icon.ico" />
       </Head>
       <Header links={['Netflix', 'Trending', 'Top', 'Action','Comedies','Scary','Romance','Documentaries']} />
       <main className="relative pl-4 sm:pb-20 md:pb-28 lg:space-y-24 lg:pl-16">
