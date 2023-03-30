@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div>
       <div className="mt-14 flex flex-col px-14 text-[#737373] md:px-28 lg:px-40 xl:px-64">
-        <ul className="my-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  text-white">
+        <ul className="my-4 grid grid-cols-2 text-white sm:grid-cols-3  md:grid-cols-4">
           <li className="my-1 cursor-pointer text-sm font-medium hover:underline md:mr-4">
             FAQ
           </li>
@@ -59,7 +59,12 @@ const Footer = () => {
           <ArrowDropDown className="text-white" />
         </button>
         <p className="my-4 text-xs font-medium">Netflix</p>
-        <p className="my-4 text-xs font-medium">jafar.fahimi12@gmail.com</p>
+        <a
+          className="my-4 text-xs font-medium"
+          href="mailto:jafar.fahimi12@gmail.com"
+        >
+          jafar.fahimi12@gmail.com
+        </a>
       </div>
 
       <div className="h-9 bg-[#333333] py-1 text-center text-white">

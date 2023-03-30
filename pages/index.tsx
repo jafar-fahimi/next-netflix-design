@@ -60,9 +60,9 @@ const Home: NextPage<Props> = ({
           "Documentaries",
         ]}
       />
-      <main className="relative pl-4 sm:pb-20 md:pb-28 lg:space-y-24 lg:pt-52 lg:pl-16 xl:pt-40">
+      <main className="relative lg:space-y-24 lg:pt-52 xl:pt-40">
         <Banner netflixOriginals={netflixOriginals} />
-        <section>
+        <section className="px-4">
           <div id="Netflix">
             <Row title="Netflix Original" movies={netflixOriginals} />
           </div>

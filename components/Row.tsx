@@ -26,7 +26,7 @@ const Row: React.FC<Props> = ({ title, movies, id }) => {
   };
 
   return (
-    <div className="my-10 h-40 space-y-0.5 md:space-y-2">
+    <div className="my-0 h-40 space-y-0.5 md:my-10 md:space-y-2">
       <h2 className="mt-8 w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-2xl">
         {title}
       </h2>
