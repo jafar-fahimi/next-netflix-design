@@ -1,17 +1,17 @@
 import Image from "next/image";
 import React from "react";
 
-export default function Watch() {
+const Watch: React.FC<{ title?: string; subtitle?: string }> = ({
+  title = "Watch everywhere.",
+  subtitle = "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.",
+}) => {
   return (
     <div className="mx-auto mt-32 flex flex-col items-center gap-y-10 px-8 sm:gap-x-4 md:gap-y-16 lg:flex-row lg:items-center lg:justify-evenly">
       <div className="max-w-[90%] text-left lg:max-w-[50%]">
         <h1 className="mb-10 text-4xl font-bold md:text-4xl lg:text-6xl">
-          Watch everywhere.
+          {title}
         </h1>
-        <p className="text-2xl lg:text-3xl">
-          Stream unlimited movies and TV shows on your phone, tablet, laptop,
-          and TV without paying more.
-        </p>
+        <p className="text-2xl lg:text-3xl">{subtitle}</p>
       </div>
       <div className="relative flex justify-center">
         <div className="absolute scale-75">
@@ -40,4 +40,6 @@ export default function Watch() {
       </div>
     </div>
   );
-}
+};
+
+export default Watch;
