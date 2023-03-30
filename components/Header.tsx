@@ -1,7 +1,4 @@
-import {
-  SearchIcon,
-  BellIcon,
-} from "@heroicons/react/solid";
+import { SearchIcon, BellIcon } from "@heroicons/react/solid";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import useAuth from "../hooks/useAuth";
@@ -14,16 +11,11 @@ export default function Header({ links }: { links: string[] }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      if (window.scrollY > 0) setIsScrolled(true);
+      else setIsScrolled(false);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (loading) return <h2>Loading...</h2>;
@@ -34,7 +26,7 @@ export default function Header({ links }: { links: string[] }) {
           src="/Netflix_2015_logo.svg"
           width={150}
           height={120}
-          className="cursor-pointer object-contain w-20 sm:w-36 md:w-40"
+          className="w-20 cursor-pointer object-contain sm:w-36 md:w-40"
         />
 
         <ul className="hidden space-x-4 md:flex">
@@ -52,7 +44,7 @@ export default function Header({ links }: { links: string[] }) {
           <li className="headerLink">My List</li> */}
         </ul>
       </div>
-      <div className="flex items-center space-x-1 md:space-x-4 text-lg font-light">
+      <div className="flex items-center space-x-1 text-lg font-light md:space-x-4">
         <SearchIcon className="sm hidden h-7 w-7 hover:text-slate-400 sm:inline" />
         <span className="hidden hover:text-slate-400 lg:inline">
           <Link href="/#kids">Kids</Link>
