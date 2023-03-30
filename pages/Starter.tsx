@@ -12,6 +12,7 @@ import {
   ChevronRightIcon,
   GlobeAltIcon,
 } from "@heroicons/react/outline";
+import Image from "next/image";
 
 // const Home:NextPage = ({ // made error!
 const Starter = () => {
@@ -62,8 +63,8 @@ const Starter = () => {
           </div>
         </div>
       </header>
-      <main className="relative sm:pb-20 md:pb-28 lg:space-y-24">
-        <div
+      <main className=" relative bg-black sm:pb-20 md:pb-28 lg:space-y-24">
+        <section
           id="banner"
           className="h-screen w-screen bg-bg_netflix bg-cover bg-no-repeat text-center text-white"
         >
@@ -91,16 +92,48 @@ const Starter = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div id="watch">
+        </section>
+        <section>
           <Watch
             title="Enjoy on your TV."
             subtitle="Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more."
           />
-        </div>
-        <div id="kids">
+        </section>
+
+        {/* mobile section */}
+        <section className=" flex flex-col items-center gap-y-10 px-8 sm:gap-x-4 md:gap-y-16 lg:flex-row lg:justify-evenly">
+          <div className="relative">
+            <Image
+              className=""
+              alt="netlflix in mobiles"
+              height={400}
+              width={600}
+              src="/../public/images/mobile-0819.jpg"
+            />
+            <div className="absolute bottom-10 left-1/2 flex w-80 -translate-x-1/2 scale-90 items-center rounded-lg border-2 border-gray-400 bg-black p-4">
+              <Image
+                height={90}
+                alt="download image"
+                width={65}
+                src="/../public/images/mobile-boxshot.png"
+              />
+              <div className="pl-4">
+                <p className="font-semibold">Stranger Things</p>
+                <span className="text-xs text-blue-700 cursor-pointer">Download</span>
+              </div>
+            </div>
+          </div>
+          <div className="max-w-lg flex-1">
+            <h2 className="text-6xl">Download your shows to watch offline</h2>
+            <h4 className="mt-6 text-xl">
+              Save your favorites easily and always have something to watch.
+            </h4>
+          </div>
+        </section>
+
+        <section>
           <Kids />
-        </div>
+        </section>
       </main>
       {showModal && <Modal />}
     </div>
