@@ -5,7 +5,7 @@ import FaqElement from "./FaqElement";
 const FAQ = () => {
   return (
     <main className="mx-auto mt-32 flex flex-col items-center gap-y-10 px-8 sm:gap-x-4 md:gap-y-16 lg:flex-row lg:justify-evenly">
-      <section className="flex w-3/5 flex-col space-y-2 text-left">
+      <section className="flex w-full flex-col space-y-2 text-left md:w-3/5">
         <FaqElement
           question="what is netflix"
           answer="

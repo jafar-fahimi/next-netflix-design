@@ -31,7 +31,7 @@ const Starter: NextPage = () => {
       }`}
     >
       <header className={`${isScrolled && "bg-black/75"}`}>
-        <div className="flex w-full items-center justify-between space-x-2 md:space-x-10">
+        <div className="flex w-full items-center justify-between h-6 p-4 lg:p-0 space-x-2 md:space-x-10">
           <img
             src="/Netflix_2015_logo.svg"
             width={150}
@@ -59,14 +59,14 @@ const Starter: NextPage = () => {
           </div>
         </div>
       </header>
-      <main className="relative bg-black lg:space-y-24">
+      <main className=" relative lg:space-y-24">
         <section
           id="banner"
           className="h-screen w-screen bg-bg_netflix bg-cover bg-no-repeat text-center text-white"
         >
           <div className="flex h-full w-full items-center justify-between bg-black/75">
-            <div className="mx-auto max-w-xl">
-              <h1 className="text-6xl font-semibold">
+            <div className="mx-auto w-11/12 max-w-xl">
+              <h1 className="text-5xl font-semibold lg:text-6xl">
                 Unlimited movies, TV shows, and more..
               </h1>
               <h3 className="my-4 text-2xl font-semibold">
@@ -82,8 +82,8 @@ const Starter: NextPage = () => {
                   type="text"
                   placeholder="Email Address"
                 />
-                <span className="flex cursor-pointer items-center rounded-tr-md rounded-br-md bg-red-600  px-5 py-4 hover:bg-red-500">
-                  Get Started <ChevronRightIcon height={20} />
+                <span className="flex cursor-pointer items-center rounded-tr-md rounded-br-md bg-red-600 px-5 py-4 hover:bg-red-500">
+                  Get&nbsp;Started <ChevronRightIcon height={20} />
                 </span>
               </div>
             </div>
@@ -97,7 +97,7 @@ const Starter: NextPage = () => {
         </section>
 
         {/* mobile section */}
-        <section className=" flex flex-col items-center gap-y-10 px-8 sm:gap-x-4 md:gap-y-16 lg:flex-row lg:justify-evenly">
+        <section className="mt-20 flex flex-col items-center gap-y-10 px-8 sm:gap-x-4 md:gap-y-16 lg:mt-0 lg:flex-row lg:justify-evenly">
           <div className="relative">
             <Image
               className=""
@@ -122,7 +122,9 @@ const Starter: NextPage = () => {
             </div>
           </div>
           <div className="max-w-lg flex-1">
-            <h2 className="text-6xl">Download your shows to watch offline</h2>
+            <h2 className="text-4xl font-bold lg:text-6xl">
+              Download your shows to watch offline
+            </h2>
             <h4 className="mt-6 text-xl">
               Save your favorites easily and always have something to watch.
             </h4>
@@ -137,8 +139,8 @@ const Starter: NextPage = () => {
         </section>
 
         <section className="flex justify-center text-center">
-          <div className="w-3/5 space-y-4">
-            <p className="text-xl">
+          <div className="w-11/12 space-y-4 md:w-3/5">
+            <p className="my-4 mt-20 text-xl md:mt-0">
               Ready to watch? Enter your email to create or restart your
               membership.
             </p>
@@ -148,8 +150,8 @@ const Starter: NextPage = () => {
                 type="text"
                 placeholder="Email Address"
               />
-              <span className="flex cursor-pointer items-center rounded-tr-md rounded-br-md bg-red-600  px-5 py-4 hover:bg-red-500">
-                Get Started <ChevronRightIcon height={20} />
+              <span className="flex cursor-pointer items-center rounded-tr-md rounded-br-md bg-red-600 px-3 py-3 hover:bg-red-500 sm:px-5 sm:py-4">
+                Get&nbsp;Started <ChevronRightIcon height={20} />
               </span>
             </div>
           </div>

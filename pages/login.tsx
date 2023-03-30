@@ -115,3 +115,5 @@ const Login: NextPage = () => {
     </section>
   );
 };
+
+export default Login;

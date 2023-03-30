@@ -5,7 +5,7 @@ const Kids = () => {
   return (
     <div className="mx-auto mt-32 flex flex-col items-center gap-y-10 px-8 sm:gap-x-4 md:gap-y-16 lg:flex-row lg:justify-evenly">
       <div className="order-1 max-w-[90%] text-left lg:order-2 lg:max-w-[50%]">
-        <h1 className="mb-10 text-4xl font-bold md:text-4xl lg:text-6xl">
+        <h1 className="mb-10 text-4xl font-bold lg:text-6xl">
           Create profiles for kids.
         </h1>
         <p className="text-2xl lg:text-3xl">
