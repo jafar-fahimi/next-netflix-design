@@ -38,8 +38,8 @@ const Starter: NextPage = () => {
             height={120}
             className="w-20 cursor-pointer object-contain sm:w-36 md:w-40"
           />
-          <div className="flex space-x-4 text-white">
-            <div className="flex border-2 border-white p-1">
+          <div className="flex space-x-3 text-white">
+            <div className="flex border border-white p-1">
               <GlobeAltIcon height={25} strokeWidth={1.5} />
               <select name="lang" className="bg-transparent" id="lang">
                 <option className="bg-black" value="english">
@@ -52,7 +52,7 @@ const Starter: NextPage = () => {
             </div>
             <a
               href="login"
-              className="rounded-lg bg-red-600 py-1 px-5 hover:bg-red-500"
+              className="rounded-md bg-red-600 py-1 px-5 hover:bg-red-500"
             >
               Sign In
             </a>

@@ -30,12 +30,15 @@ export default async function handler(
       //   res.setHeader("Content-Type", "application/json");
       //   res.setHeader("Cache-Control", "max-age=180000");
       res.end(JSON.stringify(session) || "");
-      //   res.status(200).json({ session });
+      res.status(200).json({ session });
       return session;
-    } catch (err: any) {
-      console.error("error! : " + err.message); // alert don't work in server side
-      //   res.status(200).json({ message: err });
-      //   throw new Error(err);
+    } catch (err) {
+      if (err instanceof Error) {
+        console.error("error! : " + err.message);
+        // alert don't work in server side
+        res.status(500).json({ message: err.message });
+        //   throw new Error(err);
+      }
     }
   }
 }
