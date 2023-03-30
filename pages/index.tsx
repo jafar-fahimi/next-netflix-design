@@ -1,4 +1,3 @@
-// import { NextPage } from 'next'
 import Head from "next/head";
 import React from "react";
 import Header from "../components/Header";
@@ -11,7 +10,7 @@ import { modalState } from "../atoms/modalAtoms";
 import Modal from "../components/Modal";
 import Kids from "../components/Kids";
 import Watch from "../components/Watch";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Footer from "../components/Footer";
 
 type Props = {
@@ -37,7 +36,6 @@ const Home: NextPage<Props> = ({
   trendingNow,
 }) => {
   const showModal = useRecoilValue(modalState);
-  // const [showModal, setShowModal] = useState(false);
 
   return (
     <div
@@ -104,7 +102,8 @@ const Home: NextPage<Props> = ({
 };
 export default Home;
 
-export const getServerSideProps = async () => {
+// export const getServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   let [
     netflixOriginals,
     trendingNow,
@@ -150,5 +149,6 @@ export const getServerSideProps = async () => {
       romanceMovies: romanceMovies.results,
       documentaries: documentaries.results,
     },
+    revalidate: 100,
   };
 };
