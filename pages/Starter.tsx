@@ -92,11 +92,14 @@ const Starter = () => {
             </div>
           </div>
         </div>
+        <div id="watch">
+          <Watch
+            title="Enjoy on your TV."
+            subtitle="Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more."
+          />
+        </div>
         <div id="kids">
           <Kids />
-        </div>
-        <div id="watch">
-          <Watch />
         </div>
       </main>
       {showModal && <Modal />}
