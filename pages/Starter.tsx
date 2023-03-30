@@ -1,14 +1,11 @@
 // import { NextPage } from 'next'
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
 import { useRecoilValue } from "recoil";
 import { modalState } from "../atoms/modalAtoms";
 import Modal from "../components/Modal";
 import Kids from "../components/Kids";
 import Watch from "../components/Watch";
-import Link from "next/link";
 import {
-  ChevronDoubleRightIcon,
   ChevronRightIcon,
   GlobeAltIcon,
 } from "@heroicons/react/outline";
