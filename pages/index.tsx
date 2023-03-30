@@ -12,6 +12,7 @@ import Modal from "../components/Modal";
 import Kids from "../components/Kids";
 import Watch from "../components/Watch";
 import { NextPage } from "next";
+import Footer from "../components/Footer";
 
 type Props = {
   netflixOriginals: Movie[];
@@ -93,6 +94,9 @@ const Home: NextPage<Props> = ({
         <div id="watch">
           <Watch />
         </div>
+        <footer>
+          <Footer />
+        </footer>
       </main>
       {showModal && <Modal />}
     </div>
