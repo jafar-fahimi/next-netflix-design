@@ -5,14 +5,12 @@ import { modalState } from "../atoms/modalAtoms";
 import Modal from "../components/Modal";
 import Kids from "../components/Kids";
 import Watch from "../components/Watch";
-import {
-  ChevronRightIcon,
-  GlobeAltIcon,
-} from "@heroicons/react/outline";
+import { ChevronRightIcon, GlobeAltIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { NextPage } from "next";
+import FAQ from "../components/FAQ";
 
-const Starter:NextPage = () => {
+const Starter: NextPage = () => {
   const showModal = useRecoilValue(modalState);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -65,7 +63,7 @@ const Starter:NextPage = () => {
           id="banner"
           className="h-screen w-screen bg-bg_netflix bg-cover bg-no-repeat text-center text-white"
         >
-          <div className="flex h-full w-full items-center justify-between bg-black/50">
+          <div className="flex h-full w-full items-center justify-between bg-black/75">
             <div className="mx-auto max-w-xl">
               <h1 className="text-6xl font-semibold">
                 Unlimited movies, TV shows, and more..
@@ -90,12 +88,12 @@ const Starter:NextPage = () => {
             </div>
           </div>
         </section>
-        <section>
+        {/* <section>
           <Watch
             title="Enjoy on your TV."
             subtitle="Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more."
           />
-        </section>
+        </section> */}
 
         {/* mobile section */}
         <section className=" flex flex-col items-center gap-y-10 px-8 sm:gap-x-4 md:gap-y-16 lg:flex-row lg:justify-evenly">
@@ -116,7 +114,9 @@ const Starter:NextPage = () => {
               />
               <div className="pl-4">
                 <p className="font-semibold">Stranger Things</p>
-                <span className="text-xs text-blue-700 cursor-pointer">Download</span>
+                <span className="cursor-pointer text-xs text-blue-700">
+                  Download
+                </span>
               </div>
             </div>
           </div>
@@ -130,6 +130,9 @@ const Starter:NextPage = () => {
 
         <section>
           <Kids />
+        </section>
+        <section>
+          <FAQ />
         </section>
       </main>
       {showModal && <Modal />}
