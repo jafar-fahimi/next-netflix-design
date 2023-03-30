@@ -9,6 +9,7 @@ import { ChevronRightIcon, GlobeAltIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { NextPage } from "next";
 import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
 
 const Starter: NextPage = () => {
   const showModal = useRecoilValue(modalState);
@@ -58,7 +59,7 @@ const Starter: NextPage = () => {
           </div>
         </div>
       </header>
-      <main className=" relative bg-black sm:pb-20 md:pb-28 lg:space-y-24">
+      <main className="relative bg-black lg:space-y-24">
         <section
           id="banner"
           className="h-screen w-screen bg-bg_netflix bg-cover bg-no-repeat text-center text-white"
@@ -77,23 +78,23 @@ const Starter: NextPage = () => {
               </p>
               <div className="flex">
                 <input
-                  className="flex-1 rounded-tl-lg rounded-bl-lg bg-white/40 pl-2 text-xl placeholder-gray-300 outline-1 ring-0"
+                  className="flex-1 rounded-tl-md rounded-bl-md bg-white/40 pl-2 text-xl placeholder-gray-300 outline-1 ring-0"
                   type="text"
                   placeholder="Email Address"
                 />
-                <span className="flex cursor-pointer items-center rounded-tr-lg rounded-br-lg bg-red-600  px-5 py-4 hover:bg-red-500">
+                <span className="flex cursor-pointer items-center rounded-tr-md rounded-br-md bg-red-600  px-5 py-4 hover:bg-red-500">
                   Get Started <ChevronRightIcon height={20} />
                 </span>
               </div>
             </div>
           </div>
         </section>
-        {/* <section>
+        <section>
           <Watch
             title="Enjoy on your TV."
             subtitle="Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more."
           />
-        </section> */}
+        </section>
 
         {/* mobile section */}
         <section className=" flex flex-col items-center gap-y-10 px-8 sm:gap-x-4 md:gap-y-16 lg:flex-row lg:justify-evenly">
@@ -134,6 +135,29 @@ const Starter: NextPage = () => {
         <section>
           <FAQ />
         </section>
+
+        <section className="flex justify-center text-center">
+          <div className="w-3/5 space-y-4">
+            <p className="text-xl">
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </p>
+            <div className="flex">
+              <input
+                className="flex-1 rounded-tl-md rounded-bl-md bg-white/40 pl-2 text-xl placeholder-gray-300 outline-1 ring-0"
+                type="text"
+                placeholder="Email Address"
+              />
+              <span className="flex cursor-pointer items-center rounded-tr-md rounded-br-md bg-red-600  px-5 py-4 hover:bg-red-500">
+                Get Started <ChevronRightIcon height={20} />
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <Footer />
+        </footer>
       </main>
       {showModal && <Modal />}
     </div>
