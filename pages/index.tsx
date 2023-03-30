@@ -11,6 +11,7 @@ import { modalState } from "../atoms/modalAtoms";
 import Modal from "../components/Modal";
 import Kids from "../components/Kids";
 import Watch from "../components/Watch";
+import { NextPage } from "next";
 
 type Props = {
   netflixOriginals: Movie[];
@@ -24,7 +25,7 @@ type Props = {
 };
 
 // const Home:NextPage = ({ // made error!
-const Home = ({
+const Home: NextPage<Props> = ({
   netflixOriginals,
   actionMovies,
   comedyMovies,
@@ -33,7 +34,7 @@ const Home = ({
   romanceMovies,
   topRated,
   trendingNow,
-}: Props) => {
+}) => {
   const showModal = useRecoilValue(modalState);
   // const [showModal, setShowModal] = useState(false);
 
@@ -46,18 +47,45 @@ const Home = ({
       <Head>
         <title>Netflix Design</title>
       </Head>
-      <Header links={['Netflix', 'Trending', 'Top', 'Action','Comedies','Scary','Romance','Documentaries']} />
-      <main className="relative pl-4 sm:pb-20 md:pb-28 lg:pt-52 xl:pt-40 lg:space-y-24 lg:pl-16">
+      <Header
+        links={[
+          "Netflix",
+          "Trending",
+          "Top",
+          "Action",
+          "Comedies",
+          "Scary",
+          "Romance",
+          "Documentaries",
+        ]}
+      />
+      <main className="relative pl-4 sm:pb-20 md:pb-28 lg:space-y-24 lg:pt-52 lg:pl-16 xl:pt-40">
         <Banner netflixOriginals={netflixOriginals} />
         <section>
-          <div id="Netflix"><Row title="Netflix Original" movies={netflixOriginals} /></div>
-          <div id="Trending"><Row title="Trending Now" movies={trendingNow} /></div>
-          <div id="Top"><Row title="Top Rated" movies={topRated} /></div>
-          <div id="Action"><Row title="Action Thrillers" movies={actionMovies} /></div>
-          <div id="Comedies"><Row title="Comedies" movies={comedyMovies} /></div>
-          <div id="Scary"><Row title="Scary Movies" movies={horrorMovies} /></div>
-          <div id="Romance"><Row title="Romance Movies" movies={romanceMovies} /></div>
-          <div id="Documentaries"><Row title="Documentaries" movies={documentaries} /></div>
+          <div id="Netflix">
+            <Row title="Netflix Original" movies={netflixOriginals} />
+          </div>
+          <div id="Trending">
+            <Row title="Trending Now" movies={trendingNow} />
+          </div>
+          <div id="Top">
+            <Row title="Top Rated" movies={topRated} />
+          </div>
+          <div id="Action">
+            <Row title="Action Thrillers" movies={actionMovies} />
+          </div>
+          <div id="Comedies">
+            <Row title="Comedies" movies={comedyMovies} />
+          </div>
+          <div id="Scary">
+            <Row title="Scary Movies" movies={horrorMovies} />
+          </div>
+          <div id="Romance">
+            <Row title="Romance Movies" movies={romanceMovies} />
+          </div>
+          <div id="Documentaries">
+            <Row title="Documentaries" movies={documentaries} />
+          </div>
         </section>
         <div id="kids">
           <Kids />

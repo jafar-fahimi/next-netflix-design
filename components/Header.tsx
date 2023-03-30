@@ -4,7 +4,7 @@ import Link from "next/link";
 import useAuth from "../hooks/useAuth";
 import { Box, Modal } from "@mui/material";
 
-export default function Header({ links }: { links: string[] }) {
+const Header: React.FC<{ links: string[] }> = ({ links }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { logout, loading, user } = useAuth();
   const [showLogOut, setShowLogOut] = useState(false);
@@ -130,4 +130,5 @@ export default function Header({ links }: { links: string[] }) {
       </div>
     </header>
   );
-}
+};
+export default Header;

@@ -1,4 +1,4 @@
-export default function Loader({ color }: { color: string }) {
+const Loader = ({ color }: { color: string }) => {
   return (
     <svg
       role="status"
@@ -17,4 +17,5 @@ export default function Loader({ color }: { color: string }) {
       />
     </svg>
   );
-}
+};
+export default Loader;

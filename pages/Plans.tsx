@@ -8,11 +8,12 @@ import Loader from "../components/Loader";
 import { products as myProducts } from "../utils/products";
 import getStripe from "../utils/get-stripe";
 import { Product } from "../typings";
+import { NextPage } from "next";
 
 interface Props {
   products: Product[];
 }
-function Plans({ products }: Props) {
+const Plans: NextPage<Props> = ({ products }) => {
   const { logout, user } = useAuth();
   const [selectedPlan, setSelectedPlan] = useState<Product | null>(
     myProducts[2]
@@ -121,6 +122,6 @@ function Plans({ products }: Props) {
       </main>
     </div>
   );
-}
+};
 
 export default Plans;

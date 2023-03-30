@@ -13,9 +13,9 @@ import {
   GlobeAltIcon,
 } from "@heroicons/react/outline";
 import Image from "next/image";
+import { NextPage } from "next";
 
-// const Home:NextPage = ({ // made error!
-const Starter = () => {
+const Starter:NextPage = () => {
   const showModal = useRecoilValue(modalState);
   const [isScrolled, setIsScrolled] = useState(false);
 

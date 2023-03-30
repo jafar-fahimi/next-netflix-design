@@ -9,7 +9,7 @@ interface Props {
   id?: string;
 }
 
-function Row({ title, movies, id }: Props) {
+const Row: React.FC<Props> = ({ title, movies, id }) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
 
@@ -52,6 +52,6 @@ function Row({ title, movies, id }: Props) {
       </div>
     </div>
   );
-}
+};
 
 export default Row;

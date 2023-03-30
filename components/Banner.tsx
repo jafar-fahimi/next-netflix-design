@@ -11,7 +11,7 @@ interface Props {
   netflixOriginals: Movie[];
 }
 
-function Banner({ netflixOriginals }: Props) {
+const Banner: React.FC<Props> = ({ netflixOriginals }) => {
   const [movie, setMovie] = useState<Movie | null>(null);
   const [showModal, setShowModal] = useRecoilState(modalState);
 
@@ -52,6 +52,6 @@ function Banner({ netflixOriginals }: Props) {
       </div>
     </div>
   );
-}
+};
 
 export default Banner;

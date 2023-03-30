@@ -14,7 +14,7 @@ import {
   XIcon,
 } from "@heroicons/react/outline";
 
-export default function Modal() {
+const Modal = () => {
   const [showModal, setShowModal] = useRecoilState(modalState);
   const [movie, setMovie] = useRecoilState(movieState);
   const [trailer, setTrailer] = useState("");
@@ -130,4 +130,5 @@ export default function Modal() {
       </MuiModal>
     </>
   );
-}
+};
+export default Modal;

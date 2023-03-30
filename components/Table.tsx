@@ -6,7 +6,7 @@ interface Props {
   selectedPlan: Product | null;
 }
 
-function Table({ products, selectedPlan }: Props) {
+const Table: React.FC<Props> = ({ products, selectedPlan }) => {
   return (
     <table>
       <tbody className="divide-y divide-[gray]">
@@ -77,6 +77,6 @@ function Table({ products, selectedPlan }: Props) {
       </tbody>
     </table>
   );
-}
+};
 
 export default Table;

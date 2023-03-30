@@ -8,7 +8,7 @@ interface Props {
   movie: Movie;
 }
 
-function Thumbnail({ movie }: Props) {
+const Thumbnail = ({ movie }: Props) => {
   const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
   const [showModal, setShowModal] = useRecoilState(modalState);
 
@@ -27,6 +27,6 @@ function Thumbnail({ movie }: Props) {
       />
     </div>
   );
-}
+};
 
 export default Thumbnail;

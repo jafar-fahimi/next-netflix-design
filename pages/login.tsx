@@ -4,13 +4,14 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
+import { NextPage } from "next";
 
 type Inputs = {
   email: string;
   password: string;
 };
 
-export default function Login() {
+const Login: NextPage = () => {
   const [login, setLogin] = useState(false);
   const { signIn, signUp, error } = useAuth();
   const [err, setErr] = useState<null | string | AuthError>(error);
@@ -113,4 +114,4 @@ export default function Login() {
       </form>
     </section>
   );
-}
+};
