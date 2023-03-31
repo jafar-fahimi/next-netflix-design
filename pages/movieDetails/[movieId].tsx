@@ -2,19 +2,12 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import { Movie } from "../../typings";
 import requests from "../../utils/requests";
-import {
-  GetStaticPaths,
-  GetStaticPathsContext,
-  GetStaticProps,
-  GetStaticPropsContext,
-} from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import DetailsFeed from "../../components/details/DetailsFeed";
 
-type Props = {
-  netflixOriginals: Movie[];
-};
+type Props = { netflixOriginals: Movie[] };
 
-function Details({ netflixOriginals }: Props) {
+const Details: NextPage<Props> = ({ netflixOriginals }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -33,13 +26,11 @@ function Details({ netflixOriginals }: Props) {
       <DetailsFeed netflixOriginals={netflixOriginals} />
     </motion.div>
   );
-}
+};
 
 export default Details;
 
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext
-) => {
+export const getStaticProps: GetStaticProps = async () => {
   const [netflixOriginals] = await Promise.all([
     fetch(requests.fetchNetflixOriginals).then((res) => res.json()),
   ]);
@@ -50,13 +41,16 @@ export const getStaticProps: GetStaticProps = async (
     },
   };
 };
+
 export const getStaticPaths: GetStaticPaths = () => {
   return {
     paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
+      { params: { movieId: "1" } },
+      { params: { movieId: "2" } },
+      { params: { movieId: "3" } },
+      { params: { movieId: "4" } },
+      { params: { movieId: "5" } },
     ],
-    fallback: false,
+    fallback: true,
   };
 };

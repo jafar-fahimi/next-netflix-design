@@ -35,7 +35,9 @@ const Header: React.FC<{ links: string[] }> = ({ links }) => {
           </li>
           {links.map((link) => (
             <li className="headerLink hidden lg:inline-block">
-              <Link href={`/${link}`}>{link}</Link>
+              <Link key={link} href={`/${link}`}>
+                {link}
+              </Link>
             </li>
           ))}
           {/* <li className="headerLink">TV Shows</li>

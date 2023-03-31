@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-
+import { FunctionComponent, useEffect, useState } from "react";
 import AddBookmark from "./AddBookmark";
 import BilledCast from "./BilledCast";
 import Companies from "./Companies";
@@ -13,11 +12,10 @@ import { Movie } from "../../typings";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 
-type Props = {
-  netflixOriginals: Movie[];
-};
+type Props = { netflixOriginals: Movie[] };
 
-function DetailsFeed({ netflixOriginals }: Props) {
+// is called in pages/movieDetails/[movieId];
+const DetailsFeed: FunctionComponent<Props> = ({ netflixOriginals }) => {
   const router = useRouter();
   const { movieId, type } = router.query;
   const [movieTrailer, setMovieTrailer] = useState([]);
@@ -70,7 +68,7 @@ function DetailsFeed({ netflixOriginals }: Props) {
         {type === "tv" && <Seasons movieDetails={movieDetails} />}
         <div className="pb-8">
           <Row
-            title="More Like This"
+            title="More Like This:"
             movies={netflixOriginals}
             isDetails={true}
             type="movie"
@@ -80,6 +78,6 @@ function DetailsFeed({ netflixOriginals }: Props) {
       <Footer />
     </div>
   );
-}
+};
 
 export default DetailsFeed;

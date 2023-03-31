@@ -7,14 +7,12 @@ import BannerDetailsSkeleton from "../skeletons/BannerDetailsSkeleton";
 
 const baseUrl = "https://image.tmdb.org/t/p/original";
 
-type Props = {
-  movieDetails: Details | undefined;
-};
-
-function MoreDetails({ movieDetails }: Props) {
+type Props = { movieDetails: Details | undefined };
+// is called in DetailsFeed
+const MoreDetails = ({ movieDetails }: Props) => {
   return (
     <div className="pt-16">
-      <p className="text-start text-3xl font-bold text-white">MoreDetails</p>
+      <p className="text-start text-3xl font-bold text-white">More Details</p>
 
       {movieDetails?.title ||
       movieDetails?.name ||
@@ -24,18 +22,18 @@ function MoreDetails({ movieDetails }: Props) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <div className="px-3 py-3">
-            <p className="text-lg text-gray-500">Genres</p>
+          <div className="px-3 pt-3 pb-1">
+            <p className="text-lg text-gray-500">Genres:</p>
           </div>
-          <div className="flex items-center justify-start gap-10 px-3 py-3 text-center">
+          <div className="flex items-center justify-start gap-10 px-3 pt-0 pb-5 text-center">
             {movieDetails?.genres?.map((genres: Genre, index: number) => (
               <p key={index}>{genres.name}</p>
             ))}
           </div>
-          <div className="px-3 py-3">
-            <p className="text-lg text-gray-500">Spoken Languages</p>
+          <div className="px-3 pt-3 pb-1">
+            <p className="text-lg text-gray-500">Spoken Languages:</p>
           </div>
-          <div className="flex items-center justify-start gap-10 px-3 py-3 text-center">
+          <div className="flex items-center justify-start gap-10 px-3 pt-0 pb-5 text-center">
             {movieDetails?.spoken_languages?.map(
               (language: Languages, index: number) => (
                 <p key={index}>
@@ -45,7 +43,7 @@ function MoreDetails({ movieDetails }: Props) {
             )}
           </div>
           <div className="px-3 py-3">
-            <p className="text-lg text-gray-500">production companies</p>
+            <p className="text-lg text-gray-500">production companies:</p>
           </div>
           <div className="flex items-center justify-start gap-10 px-3 py-3 text-center">
             {movieDetails?.production_companies?.map((companies: Companies) => (
@@ -67,6 +65,6 @@ function MoreDetails({ movieDetails }: Props) {
       )}
     </div>
   );
-}
+};
 
 export default MoreDetails;

@@ -6,6 +6,7 @@ import Person from "./Person";
 
 const baseUrl = "https://image.tmdb.org/t/p/original";
 
+// an array of Person if data is loaded orelse <BilledCastSkeleton /> // called in DetailsFeed
 const BilledCast = ({ movieCast }: { movieCast: any }) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);

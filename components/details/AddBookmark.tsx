@@ -15,9 +15,7 @@ import { IoIosAddCircle, IoIosRemoveCircle } from "react-icons/io";
 import { db } from "../../utils/firebase";
 import useAuth from "../../hooks/useAuth";
 
-type Props = {
-  movieDetails: any;
-};
+type Props = { movieDetails: any };
 
 const AddBookmark = ({ movieDetails }: Props) => {
   const [hasLikes, setHasLikes] = useState(false);

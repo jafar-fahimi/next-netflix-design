@@ -1,7 +1,5 @@
 import React, { useRef, useState } from "react";
-
 import { BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi";
-
 import { Movie } from "../../typings";
 import MoviesLine from "./MoviesLine";
 
@@ -15,7 +13,7 @@ type Props = {
   likeMovies?: any;
 };
 
-function Row({
+const Row = ({
   movies,
   title,
   isDetails,
@@ -23,7 +21,7 @@ function Row({
   isSearch,
   isfavourite,
   likeMovies,
-}: Props) {
+}: Props) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
 
@@ -45,8 +43,8 @@ function Row({
     <div
       className={
         isfavourite || isSearch
-          ? `h-auto space-y-0.5 md:space-y-2 px-1`
-          : `h-40 space-y-0.5 md:space-y-2 px-4`
+          ? `h-auto space-y-0.5 px-1 md:space-y-2`
+          : `h-40 space-y-0.5 px-4 md:space-y-2`
       }
     >
       <h2
@@ -73,8 +71,8 @@ function Row({
             ref={rowRef}
             className={
               likeMovies?.length >= 4
-                ? `gap-x-10 grid overflow-x-hidden gap-y-6 sm:gap-x-14 lg:gap-x-14 md:gap-x-10`
-                : `flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2`
+                ? `grid gap-x-10 gap-y-6 overflow-x-hidden sm:gap-x-14 md:gap-x-10 lg:gap-x-14`
+                : `flex items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2`
             }
           >
             {likeMovies!.map((movie: any) => (
@@ -92,8 +90,8 @@ function Row({
             ref={rowRef}
             className={
               isSearch && movies!.length >= 4
-                ? `grid overflow-x-hidden gap-y-6 gap-x-24`
-                : `flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2`
+                ? `grid gap-y-6 gap-x-24 overflow-x-hidden`
+                : `flex items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2`
             }
           >
             {movies?.map((movie) => (
@@ -116,6 +114,6 @@ function Row({
       </div>
     </div>
   );
-}
+};
 
 export default Row;

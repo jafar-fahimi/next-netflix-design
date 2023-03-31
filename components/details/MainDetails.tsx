@@ -7,11 +7,10 @@ import ImageSkeleton from "../skeletons/ImageSkeleton";
 
 const baseUrl = "https://image.tmdb.org/t/p/original";
 
-type Props = {
-  movieDetails: Details | undefined;
-};
+type Props = { movieDetails: Details | undefined };
 
-function MainDetails({ movieDetails }: Props) {
+// is called in DetailsFeed
+const MainDetails = ({ movieDetails }: Props) => {
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12 lg:pl-24">
       <div className="absolute top-0 left-0 -z-10 h-[100vh] w-screen">
@@ -66,6 +65,6 @@ function MainDetails({ movieDetails }: Props) {
       )}
     </div>
   );
-}
+};
 
 export default MainDetails;

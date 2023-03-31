@@ -11,7 +11,7 @@ type Props = {
   isfavourite?: boolean;
 };
 
-function MoviesLine({ movie, isDetails, type, isfavourite }: Props) {
+const MoviesLine = ({ movie, isDetails, type, isfavourite }: Props) => {
   const router = useRouter();
 
   const handleChangePage = () => {
@@ -85,6 +85,6 @@ function MoviesLine({ movie, isDetails, type, isfavourite }: Props) {
       )}
     </motion.div>
   );
-}
+};
 
 export default MoviesLine;

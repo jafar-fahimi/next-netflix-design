@@ -9,16 +9,16 @@ type Props = {
   movieDetails: Details | undefined;
 };
 
-function Trailer({ movieTrailer, movieDetails }: Props) {
+const Trailer = ({ movieTrailer, movieDetails }: Props) => {
   return (
     <div className="">
-      <h1 className="text-start text-white text-3xl font-bold">
+      <h1 className="text-start text-3xl font-bold text-white">
         Videos |{" "}
         {movieDetails?.title ||
           movieDetails?.name ||
           movieDetails?.original_name}
       </h1>
-      <div className="flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-1.0 md:p-2 h-[350px] overflow-y-hidden">
+      <div className="md:space-x-1.0 flex h-[350px] items-center space-x-0.5 overflow-y-hidden overflow-x-scroll scrollbar-hide md:p-2">
         {movieTrailer?.results ? (
           <>
             {movieTrailer?.results?.map((trailer: Result) => (
@@ -31,7 +31,7 @@ function Trailer({ movieTrailer, movieDetails }: Props) {
                   ease: [0, 0.71, 0.2, 1.01],
                 }}
                 key={trailer.id}
-                className="w-[500px] h-[300px] relative min-w-[180px] cursor-pointer items-center ease-out md:h-[300px] md:min-w-[500px] px-2 py-2 rounded-md hover:shadow-lg"
+                className="relative h-[300px] w-[500px] min-w-[180px] cursor-pointer items-center rounded-md px-2 py-2 ease-out hover:shadow-lg md:h-[300px] md:min-w-[500px]"
               >
                 <ReactPlayer
                   url={`https://www.youtube.com/watch?v=${trailer.key}`}
@@ -55,6 +55,6 @@ function Trailer({ movieTrailer, movieDetails }: Props) {
       </div>
     </div>
   );
-}
+};
 
 export default Trailer;

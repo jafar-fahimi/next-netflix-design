@@ -4,10 +4,7 @@ import React from "react";
 import NoCastSkeleton from "../skeletons/NoCastSkeleton";
 import { Cast } from "../../typings";
 
-type Props = {
-  cast: Cast;
-  baseUrl: string;
-};
+type Props = { cast: Cast; baseUrl: string };
 
 function Person({ cast, baseUrl }: Props) {
   const router = useRouter();
