@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React, { FunctionComponent } from "react";
 
 import { CastDataTyping } from "../../typings";
-import ImageSkeleton from "../skeleton/ImageSkeleton";
+import ImageSkeleton from "../skeletons/ImageSkeleton";
 
 type Props = {
   crewData: CastDataTyping;

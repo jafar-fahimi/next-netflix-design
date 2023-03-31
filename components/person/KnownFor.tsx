@@ -1,6 +1,6 @@
 import { useRef, useState, FunctionComponent } from "react";
 import { BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi";
-import BilledCastSkeleton from "../skeleton/BilledCastSkeleton";
+import BilledCastSkeleton from "../skeletons/BilledCastSkeleton";
 import SingleCast from "./SingleCast";
 import { CastDataTyping } from "../../typings";
 

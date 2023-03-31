@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import { motion } from "framer-motion";
 import PersonBookmark from "./PersonBookmark";
-import NoCastSkeleton from "../skeleton/NoCastSkeleton";
-import BannerDetailsSkeleton from "../skeleton/BannerDetailsSkeleton";
+import NoCastSkeleton from "../skeletons/NoCastSkeleton";
+import BannerDetailsSkeleton from "../skeletons/BannerDetailsSkeleton";
 
 const baseUrl = "https://image.tmdb.org/t/p/original";
 
