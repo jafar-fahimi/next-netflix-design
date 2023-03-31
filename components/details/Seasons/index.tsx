@@ -1,4 +1,4 @@
-import { Details } from "../../typings";
+import { Details } from "../../../typings";
 import Season from "./Season";
 
 const baseUrl = "https://image.tmdb.org/t/p/original";
@@ -10,11 +10,11 @@ type Props = {
 function Seasons({ movieDetails }: Props) {
   return (
     <div>
-      <p className="text-2xl font-bold text-gray-300 px-2.5 py-2.5 -mt-10">
-        Seasons
+      <p className="-mt-10 px-2.5 py-2.5 text-2xl font-bold text-gray-300">
+        Seasons:
       </p>
 
-      <div className="flex items-center scrollbar-hide space-x-0.5 overflow-x-scroll md:space-x-2.5 md:p-2 overflow-y-hidden">
+      <div className="flex items-center space-x-0.5 overflow-y-hidden overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2">
         {movieDetails?.seasons?.map((season) => (
           <Season
             key={season.id}

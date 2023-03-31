@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import React from "react";
-import { Seasons } from "../../typings";
+import { Seasons } from "../../../typings";
 
 type Props = {
   season: Seasons;
