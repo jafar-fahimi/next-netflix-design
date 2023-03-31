@@ -54,8 +54,8 @@ const Home: NextPage<Props> = ({
           "Action",
           "Comedies",
           "Scary",
-          "Romance",
-          "Documentaries",
+          "people",
+          "about",
         ]}
       />
       <main className="relative lg:space-y-24 lg:pt-52 xl:pt-40">
@@ -102,7 +102,7 @@ const Home: NextPage<Props> = ({
 };
 export default Home;
 
-// export const getServerSideProps = async () => {
+// with getServerSideProps it passes 5sec(amount vercel wait) & reach to timeout.
 export const getStaticProps: GetStaticProps = async () => {
   let [
     netflixOriginals,
