@@ -56,8 +56,6 @@ const PersonFeed = () => {
 
     setCastData(movieCastData.cast);
     setCastPerson(movieCastPersonData);
-    console.log("setCastData has ", movieCastData.cast);
-    console.log("setCastPerson is ", movieCastPersonData);
   };
 
   useEffect(() => {

@@ -9,7 +9,8 @@ const baseUrl = "https://image.tmdb.org/t/p/original";
 type Props = {
   castData: CastDataTyping[];
 };
-
+// component to show array of SingleCast, below PersonFeed.(if castData is loaded or else show BilledCastSkeleton)
+// KnownFor is called in PersonFeed(after fetching castData)
 const KnownFor: FunctionComponent<Props> = ({ castData }) => {
   const rowRef = useRef<HTMLDivElement>(null);
   const [isMoved, setIsMoved] = useState(false);
