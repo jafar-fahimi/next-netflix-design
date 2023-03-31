@@ -32,6 +32,32 @@ export interface Element {
     | "Teaser";
 }
 
+export interface PopularPeopleTyping {
+  adult: boolean;
+  gender: number;
+  id: number;
+  name: string;
+  known_for: {
+    adult: boolean;
+    backdrop_path: string;
+    genre_ids: number[];
+    id: number;
+    media_type: string;
+    original_language: string;
+    original_title: string;
+    overview: string;
+    poster_path: string;
+    release_date: string;
+    title: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
+  }[];
+  popularity: number;
+  profile_path: string;
+  known_for_department: string;
+}
+
 export interface Price {
   /**
    * Unique Stripe price ID.
@@ -120,4 +146,10 @@ export interface Product {
     [key: string]: string | number | null;
   };
   readonly [propName: string]: any;
+}
+
+export interface CastDataTyping {
+  id: number;
+  poster_path: string;
+  title: string;
 }
