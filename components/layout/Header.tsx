@@ -1,7 +1,7 @@
 import { SearchIcon, BellIcon } from "@heroicons/react/solid";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 import { Box, Modal } from "@mui/material";
 
 const Header: React.FC<{ links: string[] }> = ({ links }) => {

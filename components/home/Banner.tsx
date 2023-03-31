@@ -1,11 +1,11 @@
 import { InformationCircleIcon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
-import { baseUrl } from "../constants/movie";
-import { Movie } from "../typings";
+import { baseUrl } from "../../constants/movie";
+import { Movie } from "../../typings";
 import { FaPlay } from "react-icons/fa";
 import Image from "next/image";
 import { useRecoilState } from "recoil";
-import { modalState } from "../atoms/modalAtoms";
+import { modalState } from "../../atoms/modalAtoms";
 
 interface Props {
   netflixOriginals: Movie[];
@@ -22,7 +22,7 @@ const Banner: React.FC<Props> = ({ netflixOriginals }) => {
   }, [netflixOriginals]);
 
   return (
-    <div className="flex px-4 lg:px-8 flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
+    <div className="flex flex-col space-y-2 px-4 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:px-8 lg:pb-12">
       <div className="absolute top-0 left-0 -z-10 h-[95vh] w-screen">
         <Image
           layout="fill"

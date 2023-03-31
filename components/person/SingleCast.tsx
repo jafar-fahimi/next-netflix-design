@@ -16,7 +16,7 @@ const SingleCast: FunctionComponent<Props> = ({ crewData, baseUrl }) => {
 
   const handleChangePage = () => {
     router.push({
-      pathname: `${process.env.NEXT_PUBLIC_AUTH_URL}/details/${crewData.id}`,
+      pathname: `${process.env.NEXT_PUBLIC_AUTH_URL}/movieDetails/${crewData.id}`,
       query: {
         movieId: crewData.id.toString(),
         type: "movie",

@@ -2,9 +2,9 @@ import { CheckIcon } from "@heroicons/react/outline";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import Table from "../components/Table";
+import Table from "../components/plans/Table";
 import useAuth from "../hooks/useAuth";
-import Loader from "../components/Loader";
+import Loader from "../components/plans/Loader";
 import { products as myProducts } from "../utils/products";
 import getStripe from "../utils/get-stripe";
 import { Product } from "../typings";
@@ -46,7 +46,7 @@ const Plans: NextPage<Props> = ({ products }) => {
   return (
     <div>
       <Head>
-        <title>Netflix</title>
+        <title>Netflix | Plans</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className="border-b border-white/10 bg-[#141414]">

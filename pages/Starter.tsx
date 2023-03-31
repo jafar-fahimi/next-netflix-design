@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { modalState } from "../atoms/modalAtoms";
 import Modal from "../components/Modal";
-import Kids from "../components/Kids";
-import Watch from "../components/Watch";
+import Kids from "../components/home/Kids";
+import Watch from "../components/home/Watch";
 import { ChevronRightIcon, GlobeAltIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import { NextPage } from "next";
 import FAQ from "../components/FAQ";
-import Footer from "../components/Footer";
+import Footer from "../components/layout/Footer";
 
 const Starter: NextPage = () => {
   const showModal = useRecoilValue(modalState);
@@ -31,7 +31,7 @@ const Starter: NextPage = () => {
       }`}
     >
       <header className={`${isScrolled && "bg-black/75"}`}>
-        <div className="flex w-full items-center justify-between h-6 p-4 lg:p-0 space-x-2 md:space-x-10">
+        <div className="flex h-6 w-full items-center justify-between space-x-2 p-4 md:space-x-10 lg:p-0">
           <img
             src="/Netflix_2015_logo.svg"
             width={150}

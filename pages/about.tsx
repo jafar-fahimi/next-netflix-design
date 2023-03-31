@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import React from "react";
-import Header from "../components/Header";
+import Header from "../components/layout/Header";
 import AboutFeed from "../components/AboutFeed";
-import Footer from "../components/Footer";
+import Footer from "../components/layout/Footer";
 
 type Props = {};
 

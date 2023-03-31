@@ -1,11 +1,12 @@
 import { CheckIcon } from "@heroicons/react/outline";
-import { Product } from "../typings";
+import { Product } from "../../typings";
 
 interface Props {
   products: Product[];
   selectedPlan: Product | null;
 }
 
+// is called in pages/Plans
 const Table: React.FC<Props> = ({ products, selectedPlan }) => {
   return (
     <table>

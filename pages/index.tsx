@@ -1,17 +1,17 @@
 import Head from "next/head";
 import React from "react";
-import Header from "../components/Header";
-import Row from "../components/Row";
-import Banner from "../components/Banner";
+import Header from "../components/layout/Header";
+import Row from "../components/home/Row";
+import Banner from "../components/home/Banner";
 import requests from "../utils/requests";
 import { Movie } from "../typings";
 import { useRecoilValue } from "recoil";
 import { modalState } from "../atoms/modalAtoms";
 import Modal from "../components/Modal";
-import Kids from "../components/Kids";
-import Watch from "../components/Watch";
+import Kids from "../components/home/Kids";
+import Watch from "../components/home/Watch";
 import { GetStaticProps, NextPage } from "next";
-import Footer from "../components/Footer";
+import Footer from "../components/layout/Footer";
 
 type Props = {
   netflixOriginals: Movie[];

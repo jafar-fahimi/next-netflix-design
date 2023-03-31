@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useRecoilState } from "recoil";
-import { modalState, movieState } from "../atoms/modalAtoms";
-import { thumbImgBaseUrl } from "../constants/movie";
-import { Movie } from "../typings";
+import { modalState, movieState } from "../../../atoms/modalAtoms";
+import { thumbImgBaseUrl } from "../../../constants/movie";
+import { Movie } from "../../../typings";
 interface Props {
   // movie: Movie | Document // by firebase
   movie: Movie;

@@ -4,7 +4,6 @@ import {
   serverTimestamp,
   Timestamp,
 } from "firebase/firestore";
-// import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { AiFillMail } from "react-icons/ai";
 import { GoRequestChanges } from "react-icons/go";
@@ -14,10 +13,8 @@ import { db } from "../utils/firebase";
 import useAuth from "../hooks/useAuth";
 import Image from "next/image";
 
-type Props = {};
-
-function AboutFeed({}: Props) {
-  //   const { data: session } = useSession();
+// is called in pages/about.tsx
+const AboutFeed = () => {
   const [feedback, setFeedback] = useState("");
   const authDetail = useAuth();
 
@@ -54,7 +51,7 @@ function AboutFeed({}: Props) {
               alt="My Netflix Design Image"
             />
           </div>
-          <div className="w-full flex-1 mt-8 md:mt-0 items-center space-y-4 md:w-1/2">
+          <div className="mt-8 w-full flex-1 items-center space-y-4 md:mt-0 md:w-1/2">
             <p className="flex items-center justify-start gap-4 text-xl font-semibold">
               <RiNetflixFill color="red" /> Netflix Design
             </p>
@@ -99,6 +96,6 @@ function AboutFeed({}: Props) {
       </div>
     </main>
   );
-}
+};
 
 export default AboutFeed;

@@ -3,15 +3,12 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import React from "react";
 
-import Footer from "../components/Footer";
+import Footer from "../components/layout/Footer";
 import PeoplePopular from "../components/person/PeoplePopular";
 import { PopularPeopleTyping } from "../typings";
 import requests from "../utils/requests";
-import Header from "../components/Header";
-import {
-  GetStaticProps,
-  GetStaticPropsContext,
-} from "next";
+import Header from "../components/layout/Header";
+import { GetStaticProps, GetStaticPropsContext } from "next";
 
 type Props = {
   popular: PopularPeopleTyping[];

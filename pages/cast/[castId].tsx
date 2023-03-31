@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import React from "react";
-import Footer from "../../components/Footer";
+import Footer from "../../components/layout/Footer";
 import PersonFeed from "../../components/person/PersonFeed";
-import Header from "../../components/Header";
+import Header from "../../components/layout/Header";
 import { NextPage } from "next";
 
 // router is changed in PersonMaping when user click on one person(PersonMaping)
