@@ -13,6 +13,11 @@ module.exports = {
         "gradient-to-b":
           "linear-gradient(to bottom,rgba(20,20,20,0) 0,rgba(20,20,20,.15) 15%,rgba(20,20,20,.35) 29%,rgba(20,20,20,.58) 44%,#141414 68%,#141414 100%);",
       },
+      screens: {
+        "3xl": "1600px",
+        xs: "450px",
+        xxs: "400px",
+      },
     },
   },
   plugins: [
