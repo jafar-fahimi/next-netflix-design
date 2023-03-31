@@ -18,8 +18,8 @@ const MoviesLine = ({ movie, isDetails, type, isfavourite }: Props) => {
     if (isfavourite) {
       router.push({
         pathname: isDetails
-          ? `${process.env.NEXT_PUBLIC_AUTH_URL}/details/${movie.id}`
-          : `details/${movie.id}`,
+          ? `${process.env.NEXT_PUBLIC_AUTH_URL}/movieDetails/${movie.id}`
+          : `movieDetails/${movie.id}`,
         query: {
           movieId: movie.id.toString(),
           type: movie?.title ? "movie" : "tv",
@@ -28,8 +28,8 @@ const MoviesLine = ({ movie, isDetails, type, isfavourite }: Props) => {
     } else {
       router.push({
         pathname: isDetails
-          ? `${process.env.NEXT_PUBLIC_AUTH_URL}/details/${movie.id}`
-          : `details/${movie.id}`,
+          ? `${process.env.NEXT_PUBLIC_AUTH_URL}/movieDetails/${movie.id}`
+          : `movieDetails/${movie.id}`,
         query: {
           movieId: movie.id.toString(),
           type: movie.media_type?.toString()
