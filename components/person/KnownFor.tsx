@@ -1,6 +1,6 @@
 import { useRef, useState, FunctionComponent } from "react";
 import { BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi";
-import BilledCastSceleton from "../skeleton/BilledCastSceleton";
+import BilledCastSkeleton from "../skeleton/BilledCastSkeleton";
 import SingleCast from "./SingleCast";
 import { CastDataTyping } from "../../typings";
 
@@ -49,15 +49,15 @@ const KnownFor: FunctionComponent<Props> = ({ castData }) => {
           </>
         ) : (
           <>
-            <BilledCastSceleton />
-            <BilledCastSceleton />
-            <BilledCastSceleton />
-            <BilledCastSceleton />
-            <BilledCastSceleton />
-            <BilledCastSceleton />
-            <BilledCastSceleton />
-            <BilledCastSceleton />
-            <BilledCastSceleton />
+            <BilledCastSkeleton />
+            <BilledCastSkeleton />
+            <BilledCastSkeleton />
+            <BilledCastSkeleton />
+            <BilledCastSkeleton />
+            <BilledCastSkeleton />
+            <BilledCastSkeleton />
+            <BilledCastSkeleton />
+            <BilledCastSkeleton />
           </>
         )}
       </div>
