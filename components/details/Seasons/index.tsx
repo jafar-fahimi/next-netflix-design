@@ -2,7 +2,6 @@ import { Details } from "../../../typings";
 import Season from "./Season";
 
 const baseUrl = "https://image.tmdb.org/t/p/original";
-
 type Props = { movieDetails: Details | undefined };
 
 const Seasons = ({ movieDetails }: Props) => {

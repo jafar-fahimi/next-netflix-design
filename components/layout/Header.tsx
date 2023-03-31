@@ -4,7 +4,17 @@ import Link from "next/link";
 import useAuth from "../../hooks/useAuth";
 import { Box, Modal } from "@mui/material";
 
-const Header: React.FC<{ links: string[] }> = ({ links }) => {
+const Header: React.FC = () => {
+  const links = [
+    "Netflix",
+    "Trending",
+    "Top",
+    "Action",
+    "Comedies",
+    "tv",
+    "people",
+    "about",
+  ];
   const [isScrolled, setIsScrolled] = useState(false);
   const { logout, loading, user } = useAuth();
   const [showLogOut, setShowLogOut] = useState(false);
@@ -36,7 +46,7 @@ const Header: React.FC<{ links: string[] }> = ({ links }) => {
           {links.map((link) => (
             <li className="headerLink hidden lg:inline-block">
               <Link key={link} href={`/${link}`}>
-                {link}
+                {link[0].toUpperCase() + link.slice(1)}
               </Link>
             </li>
           ))}

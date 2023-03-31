@@ -46,18 +46,7 @@ const Home: NextPage<Props> = ({
       <Head>
         <title>Netflix Design</title>
       </Head>
-      <Header
-        links={[
-          "Netflix",
-          "Trending",
-          "Top",
-          "Action",
-          "Comedies",
-          "Scary",
-          "people",
-          "about",
-        ]}
-      />
+      <Header />
       <main className="relative lg:space-y-24 lg:pt-52 xl:pt-40">
         <Banner netflixOriginals={netflixOriginals} />
         <section className="px-4">

@@ -18,18 +18,7 @@ const CastPage: NextPage = () => {
       <Head>
         <title>Netflix Design</title>
       </Head>
-      <Header
-        links={[
-          "Netflix",
-          "Trending",
-          "Top",
-          "Action",
-          "Comedies",
-          "Scary",
-          "people",
-          "about",
-        ]}
-      />
+      <Header />
       <div className="bg-gradient-to-r from-gray-900">
         <PersonFeed />
         <Footer />

@@ -36,9 +36,7 @@ export const getStaticProps: GetStaticProps = async () => {
   ]);
 
   return {
-    props: {
-      netflixOriginals: netflixOriginals.results,
-    },
+    props: { netflixOriginals: netflixOriginals.results },
   };
 };
 

@@ -25,18 +25,7 @@ function People({ popular }: Props) {
       <Head>
         <title>Netflix Design | Popular People</title>
       </Head>
-      <Header
-        links={[
-          "Netflix",
-          "Trending",
-          "Top",
-          "Action",
-          "Comedies",
-          "Scary",
-          "people",
-          "about",
-        ]}
-      />
+      <Header />
       <div className="bg-gradient-to-r from-gray-900">
         <main className="relative pl-4 pb-24 lg:space-y-24">
           <PeoplePopular popular={popular} />
