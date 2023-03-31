@@ -9,7 +9,7 @@ import {
 
 import { useRouter } from "next/router";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { auth } from "../firebase";
+import { auth } from "../utils/firebase";
 
 type AuthProviderProps = {
   children: React.ReactNode;
@@ -99,6 +99,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       })
       .finally(() => setLoading(false));
   };
+
   const memoedValues = useMemo(
     () => ({ user, signUp, signIn, error, loading, logout }),
     [user, loading, error]
