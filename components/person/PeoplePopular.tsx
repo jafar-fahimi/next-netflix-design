@@ -8,7 +8,6 @@ type Props = {
 };
 // is called in pages/popular(after data is fetched)
 const PeoplePopular: FunctionComponent<Props> = ({ popular }) => {
-  console.log("popular is", popular);
   return (
     <div className="overflow-x-hidden pt-36">
       <p className="pl-2 text-4xl font-medium text-gray-400">Populars</p>
