@@ -1,4 +1,3 @@
-// import { NextPage } from 'next'
 import React, { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { modalState } from "../atoms/modalAtoms";

@@ -1,8 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import Header from "../components/layout/Header";
-import Row from "../components/home/Row";
-import Banner from "../components/home/Banner";
+// import Row from "../components/home/Row";
 import requests from "../utils/requests";
 import { Movie } from "../typings";
 import { useRecoilValue } from "recoil";
@@ -12,6 +11,8 @@ import Kids from "../components/home/Kids";
 import Watch from "../components/home/Watch";
 import { GetStaticProps, NextPage } from "next";
 import Footer from "../components/layout/Footer";
+import HomeBanner from "../components/HomeBanner";
+import Row from "../components/Row";
 
 type Props = {
   netflixOriginals: Movie[];
@@ -24,7 +25,6 @@ type Props = {
   trendingNow: Movie[];
 };
 
-// const Home:NextPage = ({ // made error!
 const Home: NextPage<Props> = ({
   netflixOriginals,
   actionMovies,
@@ -43,36 +43,37 @@ const Home: NextPage<Props> = ({
         showModal && "!h-screen overflow-hidden"
       }`}
     >
-      <Head>
-        <title>Netflix Design</title>
-      </Head>
       <Header />
       <main className="relative lg:space-y-24 lg:pt-52 xl:pt-40">
-        <Banner netflixOriginals={netflixOriginals} />
+        <HomeBanner netflixOriginals={netflixOriginals} />
         <section className="px-4">
           <div id="Netflix">
-            <Row title="Netflix Original" movies={netflixOriginals} />
+            <Row
+              type="movie"
+              title="Netflix Original"
+              movies={netflixOriginals}
+            />
           </div>
           <div id="Trending">
-            <Row title="Trending Now" movies={trendingNow} />
+            <Row type="movie" title="Trending Now" movies={trendingNow} />
           </div>
           <div id="Top">
-            <Row title="Top Rated" movies={topRated} />
+            <Row type="movie" title="Top Rated" movies={topRated} />
           </div>
           <div id="Action">
-            <Row title="Action Thrillers" movies={actionMovies} />
+            <Row type="movie" title="Action Thrillers" movies={actionMovies} />
           </div>
           <div id="Comedies">
-            <Row title="Comedies" movies={comedyMovies} />
+            <Row type="movie" title="Comedies" movies={comedyMovies} />
           </div>
           <div id="Scary">
-            <Row title="Scary Movies" movies={horrorMovies} />
+            <Row type="movie" title="Scary Movies" movies={horrorMovies} />
           </div>
           <div id="Romance">
-            <Row title="Romance Movies" movies={romanceMovies} />
+            <Row type="movie" title="Romance Movies" movies={romanceMovies} />
           </div>
           <div id="Documentaries">
-            <Row title="Documentaries" movies={documentaries} />
+            <Row type="movie" title="Documentaries" movies={documentaries} />
           </div>
         </section>
         <div id="kids">

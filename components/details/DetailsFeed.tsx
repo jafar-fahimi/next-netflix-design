@@ -5,7 +5,7 @@ import BilledCast from "./BilledCast";
 import Companies from "./Companies";
 import MainDetails from "./MainDetails";
 import MoreDetails from "./MoreDetails";
-import Row from "./Row";
+import Row from "../Row";
 import Seasons from "./Seasons";
 import Trailer from "./Trailer";
 import { Movie } from "../../typings";

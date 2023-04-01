@@ -8,14 +8,14 @@ import PeoplePopular from "../components/person/PeoplePopular";
 import { PopularPeopleTyping } from "../typings";
 import requests from "../utils/requests";
 import Header from "../components/layout/Header";
-import { GetStaticProps, GetStaticPropsContext } from "next";
+import { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
 
 type Props = {
   popular: PopularPeopleTyping[];
   session?: any;
 };
 
-function People({ popular }: Props) {
+const People: NextPage<Props> = ({ popular }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -34,7 +34,7 @@ function People({ popular }: Props) {
       </div>
     </motion.div>
   );
-}
+};
 
 export default People;
 

@@ -60,7 +60,7 @@ const HomeBanner = ({ netflixOriginals, authDetail, isTv }: Props) => {
   const handleChangePage = () => {
     if (movie) {
       router.push({
-        pathname: `details/${movie.id}`,
+        pathname: `movieDetails/${movie.id}`,
         query: {
           movieId: movie.id.toString(),
           type: isTv ? "tv" : "movie",
