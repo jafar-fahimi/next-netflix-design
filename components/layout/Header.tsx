@@ -10,7 +10,7 @@ const Header: React.FC = () => {
     "Trending",
     "Top",
     "Action",
-    "Comedies",
+    "favorite",
     "tv",
     "people",
     "about",
