@@ -5,16 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import { Box, Modal } from "@mui/material";
 
 const Header: React.FC = () => {
-  const links = [
-    "Netflix",
-    "Trending",
-    "Top",
-    "Action",
-    "favorite",
-    "tv",
-    "people",
-    "about",
-  ];
+  const links = ["Movies", "favorite", "tv Shows", "people", "about"];
   const [isScrolled, setIsScrolled] = useState(false);
   const { logout, loading, user } = useAuth();
   const [showLogOut, setShowLogOut] = useState(false);
@@ -57,7 +48,7 @@ const Header: React.FC = () => {
         </ul>
       </div>
       <div className="flex items-center space-x-1 text-lg font-light md:space-x-4">
-        <SearchIcon className="sm hidden h-7 w-7 hover:text-slate-400 sm:inline" />
+        <SearchIcon className="sm hidden h-7 w-7 cursor-pointer hover:text-slate-400 sm:inline" />
         <span className="hidden hover:text-slate-400 lg:inline">
           <Link href="/#kids">Kids</Link>
         </span>
@@ -66,7 +57,7 @@ const Header: React.FC = () => {
         </button>
 
         <Link href="/#watch">
-          <BellIcon className="h-7 w-7 hover:text-slate-400" />
+          <BellIcon className="h-7 w-7 cursor-pointer hover:text-slate-400" />
         </Link>
         <button
           className="hover:text-slate-400"
