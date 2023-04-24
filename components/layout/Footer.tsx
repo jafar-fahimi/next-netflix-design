@@ -1,5 +1,5 @@
 import { GlobeAltIcon } from "@heroicons/react/outline";
-import { ArrowDropDown } from "@mui/icons-material";
+import { AiOutlineArrowDown } from "react-icons/ai";
 import React from "react";
 
 const Footer = () => {
@@ -56,7 +56,7 @@ const Footer = () => {
         <button className="flex h-12 w-36 items-center justify-evenly border border-[#737373] font-medium">
           <GlobeAltIcon height={25} strokeWidth={1.5} />
           English
-          <ArrowDropDown className="text-white" />
+          <AiOutlineArrowDown className="text-white" />
         </button>
         <p className="my-4 text-xs font-medium">Netflix</p>
         <a
@@ -68,7 +68,7 @@ const Footer = () => {
       </div>
 
       <div className="h-9 bg-[#333333] py-1 text-center text-white">
-        For Educational Purposes Only
+        Just For Learning Purposes
       </div>
     </div>
   );

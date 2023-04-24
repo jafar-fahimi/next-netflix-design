@@ -2,7 +2,6 @@ import { SearchIcon, BellIcon } from "@heroicons/react/solid";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import useAuth from "../../hooks/useAuth";
-import { Box, Modal } from "@mui/material";
 
 const Header: React.FC = () => {
   const links = ["Movies", "favorite", "tv Shows", "people", "about"];
@@ -80,54 +79,52 @@ const Header: React.FC = () => {
           </svg>
         </button>
         {showLogOut && (
-          <div>
-            <Modal
-              open={showLogOut}
-              onClose={setShowLogOut}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <Box className="flex h-full flex-col items-center justify-center bg-black/20">
-                <div className="flex items-center rounded-lg bg-black/50 py-4 px-8 pb-8">
-                  <span className="mr-10 inline rounded-full bg-red-600 p-1">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.8}
-                      stroke="white"
-                      className="inline h-10 w-10"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <h2 className="mb-8 text-center text-2xl">
-                      Are You Sure to logout?
-                    </h2>
+          <div
+            // onClose={setShowLogOut}
+            className="border-2 border-white absolute top-2/3 left-1/2 -translate-x-1/2 translate-y-1/2 "
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <div className="flex h-full flex-col items-center justify-center bg-black/20">
+              <div className="flex items-center rounded-lg bg-black/50 py-4 px-8 pb-8">
+                <span className="mr-10 inline rounded-full bg-red-600 p-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.8}
+                    stroke="white"
+                    className="inline h-10 w-10"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h2 className="mb-8 text-center text-2xl">
+                    Are You Sure to logout?
+                  </h2>
 
-                    <div className="flex gap-x-4 text-lg">
-                      <button
-                        className="rounded-sm bg-blue-600 py-3 px-12 hover:bg-blue-600/80"
-                        onClick={() => setShowLogOut(false)}
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="rounded-sm bg-red-600 py-3 px-12 hover:bg-red-600/80"
-                        onClick={logout}
-                      >
-                        Log Out
-                      </button>
-                    </div>
+                  <div className="flex gap-x-4 text-lg">
+                    <button
+                      className="rounded-sm bg-blue-600 py-3 px-12 hover:bg-blue-600/80"
+                      onClick={() => setShowLogOut(false)}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="rounded-sm bg-red-600 py-3 px-12 hover:bg-red-600/80"
+                      onClick={logout}
+                    >
+                      Log Out
+                    </button>
                   </div>
                 </div>
-              </Box>
-            </Modal>
+              </div>
+            </div>
           </div>
         )}
       </div>
